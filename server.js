@@ -5,6 +5,8 @@ const { site, sharedFaqs, blogPosts, serviceAreas } = require("./seo-content");
 
 const root = __dirname;
 const port = Number(process.env.PORT || 3000);
+const quoteRateLimit = new Map();
+const maxQuoteBodyBytes = 100_000;
 
 const contentTypes = {
   ".html": "text/html; charset=utf-8",
@@ -335,6 +337,171 @@ function send(res, statusCode, body, contentType = "text/plain; charset=utf-8") 
   res.end(body);
 }
 
+function sendJson(res, statusCode, data) {
+  send(res, statusCode, JSON.stringify(data), "application/json; charset=utf-8");
+}
+
+function readJsonBody(req) {
+  return new Promise((resolve, reject) => {
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk;
+      if (body.length > maxQuoteBodyBytes) {
+        reject(new Error("Request body too large."));
+        req.destroy();
+      }
+    });
+    req.on("end", () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch {
+        reject(new Error("Invalid JSON body."));
+      }
+    });
+    req.on("error", reject);
+  });
+}
+
+function clientIp(req) {
+  return (req.headers["x-forwarded-for"] || req.socket.remoteAddress || "unknown").toString().split(",")[0].trim();
+}
+
+function isRateLimited(req) {
+  const ip = clientIp(req);
+  const now = Date.now();
+  const windowMs = 10 * 60 * 1000;
+  const maxRequests = 5;
+  const current = quoteRateLimit.get(ip) || [];
+  const recent = current.filter((timestamp) => now - timestamp < windowMs);
+  recent.push(now);
+  quoteRateLimit.set(ip, recent);
+  return recent.length > maxRequests;
+}
+
+function normalizeQuotePayload(payload) {
+  const services = Array.isArray(payload.services) ? payload.services : [payload.services].filter(Boolean);
+  const photos = Array.isArray(payload.photos) ? payload.photos : [];
+  return {
+    name: String(payload.name || "").trim(),
+    email: String(payload.email || "").trim(),
+    phone: String(payload.phone || "").trim(),
+    address: String(payload.address || "").trim(),
+    propertyType: String(payload.propertyType || payload["property-type"] || "").trim(),
+    preferredContact: String(payload.preferredContact || payload["preferred-contact"] || "").trim(),
+    services: services.map((item) => String(item).trim()).filter(Boolean),
+    message: String(payload.message || payload.details || "").trim(),
+    photos: photos.map((item) => String(item).trim()).filter(Boolean),
+    consent: Boolean(payload.consent),
+    website: String(payload.website || "").trim()
+  };
+}
+
+function validateQuotePayload(payload) {
+  const errors = {};
+  if (payload.website) return { spam: "Spam check failed." };
+  if (!payload.name) errors.name = "Full name is required.";
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(payload.email)) errors.email = "A valid email is required.";
+  if (!payload.phone) errors.phone = "Phone number is required.";
+  if (!payload.address) errors.address = "Property address is required.";
+  if (!payload.services.length) errors.services = "At least one service is required.";
+  if (!payload.consent) errors.consent = "Consent is required.";
+  return errors;
+}
+
+function quoteEmailText(payload) {
+  return [
+    "New Christmas Lights Ottawa Quote Request",
+    "",
+    "Contact Details",
+    `Name: ${payload.name}`,
+    `Email: ${payload.email}`,
+    `Phone: ${payload.phone}`,
+    `Preferred Contact: ${payload.preferredContact || "Not provided"}`,
+    "",
+    "Property Details",
+    `Address: ${payload.address}`,
+    `Property Type: ${payload.propertyType || "Not provided"}`,
+    "",
+    "Services Interested In",
+    payload.services.map((item) => `- ${item}`).join("\n"),
+    "",
+    "Project Details",
+    payload.message || "Not provided",
+    "",
+    "Photo Upload Details",
+    payload.photos.length ? payload.photos.map((item) => `- ${item}`).join("\n") : "No files listed.",
+    "",
+    `Consent: ${payload.consent ? "Yes" : "No"}`
+  ].join("\n");
+}
+
+async function sendQuoteEmail(payload) {
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.QUOTE_TO_EMAIL;
+  const from = process.env.QUOTE_FROM_EMAIL || "Christmas Lights Ottawa <onboarding@resend.dev>";
+
+  if (!apiKey || !to) {
+    return { ok: false, setupMissing: true };
+  }
+
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      from,
+      to,
+      reply_to: payload.email,
+      subject: "New Christmas Lights Ottawa Quote Request",
+      text: quoteEmailText(payload)
+    })
+  });
+
+  if (!response.ok) {
+    return { ok: false, status: response.status };
+  }
+
+  return { ok: true };
+}
+
+async function handleQuoteRequest(req, res) {
+  if (req.method !== "POST") {
+    sendJson(res, 405, { ok: false, message: "Method not allowed." });
+    return;
+  }
+
+  if (isRateLimited(req)) {
+    sendJson(res, 429, { ok: false, message: "Too many quote requests. Please try again later." });
+    return;
+  }
+
+  try {
+    const payload = normalizeQuotePayload(await readJsonBody(req));
+    const errors = validateQuotePayload(payload);
+    if (Object.keys(errors).length) {
+      sendJson(res, 400, { ok: false, message: "Please review the highlighted fields.", errors });
+      return;
+    }
+
+    const result = await sendQuoteEmail(payload);
+    if (result.setupMissing) {
+      sendJson(res, 503, { ok: false, message: "Online quote delivery is not connected yet. Please call or text 613-744-7336." });
+      return;
+    }
+
+    if (!result.ok) {
+      sendJson(res, 502, { ok: false, message: "The quote request could not be sent. Please call or text 613-744-7336." });
+      return;
+    }
+
+    sendJson(res, 200, { ok: true, message: "Thanks. Your quote request has been received. Christmas Lights Ottawa will contact you shortly." });
+  } catch {
+    sendJson(res, 400, { ok: false, message: "The quote request could not be processed. Please check the form and try again." });
+  }
+}
+
 function resolveRequestPath(url) {
   const parsed = new URL(url, `http://localhost:${port}`);
   const decodedPath = decodeURIComponent(parsed.pathname);
@@ -350,13 +517,18 @@ function resolveRequestPath(url) {
 }
 
 const server = http.createServer((req, res) => {
+  const parsedUrl = new URL(req.url, `http://localhost:${port}`);
+  const pathname = parsedUrl.pathname.replace(/\/$/, "") || "/";
+
+  if (pathname === "/api/quote") {
+    handleQuoteRequest(req, res);
+    return;
+  }
+
   if (!["GET", "HEAD"].includes(req.method)) {
     send(res, 405, "Method not allowed");
     return;
   }
-
-  const parsedUrl = new URL(req.url, `http://localhost:${port}`);
-  const pathname = parsedUrl.pathname.replace(/\/$/, "") || "/";
 
   if (pathname === "/robots.txt") {
     send(res, 200, `User-agent: *\nAllow: /\nSitemap: ${absoluteUrl("/sitemap.xml")}\n`, "text/plain; charset=utf-8");

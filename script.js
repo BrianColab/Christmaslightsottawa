@@ -58,6 +58,7 @@ setHTML("services-grid", data.services.map((service) => `
     <h3>${service.title}</h3>
     <p>${service.text}</p>
     <img src="${smallImage(service.image)}" srcset="${imageSrcset(service.image)}" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1180px) 33vw, 280px" width="640" height="427" alt="${service.alt}" loading="lazy" decoding="async">
+    <a class="text-link" href="/request-a-quote" data-cta="service-request-quote">Request a Free Quote</a>
   </article>
 `).join(""));
 
@@ -70,6 +71,7 @@ setHTML("packages-grid", data.packages.map((item, index) => `
     <p class="package-kicker">Package ${index + 1}</p>
     <h3>${item.title}</h3>
     <p>${item.text}</p>
+    <a class="text-link" href="/request-a-quote" data-cta="package-request-quote">Request a Free Quote</a>
   </article>
 `).join(""));
 
@@ -361,7 +363,40 @@ function validateQuoteForm(form) {
   return isValid;
 }
 
-document.querySelector("[data-drawer-form]")?.addEventListener("submit", (event) => {
+function quotePayload(form) {
+  const formData = new FormData(form);
+  return {
+    name: formData.get("name"),
+    email: formData.get("email"),
+    phone: formData.get("phone"),
+    address: formData.get("address"),
+    propertyType: formData.get("property-type"),
+    preferredContact: formData.get("preferred-contact"),
+    services: formData.getAll("services"),
+    message: formData.get("message") || formData.get("details"),
+    photos: formData.getAll("photos").filter((file) => file?.name).map((file) => file.name),
+    consent: formData.get("consent") === "on",
+    website: formData.get("website")
+  };
+}
+
+function setSubmitState(form, isSubmitting) {
+  const button = form.querySelector('[type="submit"]');
+  if (!button) return;
+  button.disabled = isSubmitting;
+  button.dataset.originalHtml ||= button.innerHTML;
+  button.innerHTML = isSubmitting ? "Submitting..." : button.dataset.originalHtml;
+}
+
+function showStatus(status, message, isError = false) {
+  if (!status) return;
+  status.hidden = false;
+  status.textContent = message;
+  status.classList.toggle("is-error", isError);
+  status.focus?.();
+}
+
+document.querySelector("[data-drawer-form]")?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const form = event.currentTarget;
   const status = document.querySelector("[data-drawer-status]");
@@ -369,10 +404,29 @@ document.querySelector("[data-drawer-form]")?.addEventListener("submit", (event)
     form.querySelector(".field-error")?.scrollIntoView({ behavior: "smooth", block: "center" });
     return;
   }
-  if (status) {
-    status.hidden = false;
-    status.textContent = "This form is ready, but online submission still needs to be connected to email delivery, CRM, or a form backend.";
-    status.focus?.();
+
+  setSubmitState(form, true);
+  showStatus(status, "Submitting your quote request...");
+
+  try {
+    const response = await fetch("/api/quote", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(quotePayload(form))
+    });
+    const result = await response.json();
+
+    if (!response.ok || !result.ok) {
+      showStatus(status, result.message || "The quote request could not be sent. Please call or text 613-744-7336.", true);
+      return;
+    }
+
+    form.reset();
+    showStatus(status, result.message || "Thanks. Your quote request has been received. Christmas Lights Ottawa will contact you shortly.");
+  } catch {
+    showStatus(status, "The quote request could not be sent. Please call or text 613-744-7336.", true);
+  } finally {
+    setSubmitState(form, false);
   }
 });
 
