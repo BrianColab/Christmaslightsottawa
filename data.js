@@ -27,11 +27,11 @@ window.siteData = {
     "Installation, maintenance, takedown, and storage handled for you"
   ],
   trustItems: [
-    { icon: "store", title: "Trusted by", text: "Ottawa clients" },
-    { icon: "home", title: "Serving Ottawa", text: "and nearby communities" },
+    { icon: "calendar", title: "Over 10 years", text: "serving Ottawa" },
+    { icon: "shield", title: "Fully", text: "insured" },
     { icon: "sparkle", title: "Maintenance", text: "available" },
     { icon: "box", title: "Takedown and", text: "storage available" },
-    { icon: "wreath", title: "Custom designs", text: "for homes and businesses" }
+    { icon: "store", title: "Trusted by homes", text: "and businesses" }
   ],
   process: [
     {
@@ -238,7 +238,7 @@ window.siteData = {
     },
     {
       question: "Do you offer maintenance during the season?",
-      answer: "Yes. Maintenance is available throughout the season so your lights and decorations can stay looking their best."
+      answer: "Yes. Maintenance is available throughout the season so your lights and decorations can stay looking good."
     },
     {
       question: "What areas do you serve?",

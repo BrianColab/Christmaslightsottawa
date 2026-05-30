@@ -174,7 +174,7 @@ function updateChristmasCountdown() {
     <span class="countdown-number">${days}</span>
     <span class="countdown-copy">
       <span class="countdown-label">${label} until Christmas</span>
-      <span class="countdown-subline">Book early for the best holiday decorating plan.</span>
+      <span class="countdown-subline">Book early for more holiday decorating options.</span>
     </span>
   `;
 }

@@ -61,7 +61,7 @@ const blogPosts = [
       {
         heading: "Maintenance, takedown, and storage matter",
         body:
-          "The best holiday decorating plan includes more than installation day. Ask about maintenance during the season, takedown timing, and whether storage is available so the display is easier to use again next year."
+          "A complete holiday decorating plan includes more than installation day. Ask about maintenance during the season, takedown timing, and whether storage is available so the display is easier to use again next year."
       },
       {
         heading: "When to book",
@@ -186,7 +186,7 @@ const blogPosts = [
           "The same approach can help commercial storefronts feel welcoming. Garlands around doors or windows, a wreath, and subtle lighting can improve the customer experience during the holiday season."
       },
       {
-        heading: "Where entryway decorating works best",
+        heading: "Where entryway decorating works well",
         body:
           "Entryway decorating is especially useful for front doors, covered porches, railings, columns, window boxes, planters, garage-side entrances, and storefront doors where guests naturally pause."
       }
@@ -249,7 +249,7 @@ const blogPosts = [
     image: "/assets/images/optimized/hero-lower-level-lighting-1200.jpg",
     sections: [
       {
-        heading: "Fall is the best time to start planning",
+        heading: "Fall is a good time to start planning",
         body:
           "Fall planning gives you more time to review design ideas, choose products, and schedule installation before Ottawa winter weather becomes less predictable."
       },

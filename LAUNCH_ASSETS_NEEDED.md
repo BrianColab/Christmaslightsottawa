@@ -1,0 +1,23 @@
+# Launch Assets Needed
+
+- [ ] Final logo file.
+- [ ] Favicon.
+- [ ] Top 10 to 20 real project photos.
+- [ ] Gallery photos categorized by service.
+- [ ] Entryway and porch photos.
+- [ ] Wreath, garland, and bow photos.
+- [ ] Walkway, shrub, and small tree photos.
+- [ ] Commercial storefront photos.
+- [ ] Real testimonials with approved attribution.
+- [ ] Confirmed service areas.
+- [ ] Confirmed pricing language.
+- [ ] Confirmed insurance wording.
+- [ ] Confirmed warranty/maintenance wording.
+- [ ] Confirmed business email.
+- [ ] Confirmed business address if they want it public.
+- [ ] Google Business Profile link.
+- [ ] Social media links.
+- [ ] Form destination email.
+- [ ] Analytics/tracking IDs if used.
+- [ ] Final privacy policy.
+- [ ] Final terms or service disclaimer if needed.
