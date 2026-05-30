@@ -65,56 +65,56 @@ window.siteData = {
       icon: "home",
       title: "Entryway & Porch Decorating",
       text: "Make the first view of your home feel warm, finished, and festive.",
-      image: "assets/images/porch-entry-lighting.png",
+      image: "assets/images/optimized/porch-entry-lighting-1200.jpg",
       alt: "Ottawa front porch decorated with Christmas wreaths, garlands, bows, and warm white lights"
     },
     {
       icon: "sparkle",
       title: "Lower-Level Trim Lighting",
       text: "Warm accents for porches, garages, entryways, and easy-to-reach trim.",
-      image: "assets/images/hero-lower-level-lighting.png",
+      image: "assets/images/optimized/hero-lower-level-lighting-1200.jpg",
       alt: "Warm lower-level Christmas trim lighting around an Ottawa porch and garage"
     },
     {
       icon: "wreath",
       title: "Wreaths, Garlands & Bows",
       text: "Classic greenery that adds polish before guests or customers reach the door.",
-      image: "assets/images/porch-entry-lighting.png",
+      image: "assets/images/optimized/porch-entry-lighting-1200.jpg",
       alt: "Front porch wreaths and garland with warm Christmas lights"
     },
     {
       icon: "tree",
       title: "Trees, Shrubs & Landscape Accents",
       text: "Soft landscape glow for small trees, shrubs, and garden beds.",
-      image: "assets/images/garage-walkway-lighting.png",
+      image: "assets/images/optimized/garage-walkway-lighting-1200.jpg",
       alt: "Lit shrubs and small evergreens along a winter walkway"
     },
     {
       icon: "bulb",
       title: "Walkways & Driveway Accents",
       text: "Guide guests in with elegant lighting along paths and approaches.",
-      image: "assets/images/garage-walkway-lighting.png",
+      image: "assets/images/optimized/garage-walkway-lighting-1200.jpg",
       alt: "Warm pathway lighting and snowy lower-level Christmas accents"
     },
     {
       icon: "store",
       title: "Commercial Storefront Decorating",
       text: "Create a welcoming holiday storefront for customers and staff.",
-      image: "assets/images/commercial-storefront-lighting.png",
+      image: "assets/images/optimized/commercial-storefront-lighting-1200.jpg",
       alt: "Commercial storefront decorated with Christmas garland and warm lights"
     },
     {
       icon: "box",
       title: "Takedown & Storage",
       text: "We remove, organize, and prepare your display for storage after the season.",
-      image: "assets/images/porch-entry-lighting.png",
+      image: "assets/images/optimized/porch-entry-lighting-1200.jpg",
       alt: "Neatly decorated lower-level holiday display ready for seasonal care"
     },
     {
       icon: "award",
       title: "Complete Holiday Decor Package",
       text: "A full lower-level plan with lights, greenery, care, removal, and storage.",
-      image: "assets/images/hero-lower-level-lighting.png",
+      image: "assets/images/optimized/hero-lower-level-lighting-1200.jpg",
       alt: "Premium complete lower-level Christmas decor package on an Ottawa home"
     }
   ],
@@ -187,37 +187,37 @@ window.siteData = {
   areas: ["Ottawa", "Kanata", "Stittsville", "Barrhaven", "Orleans", "Riverside South", "Glebe", "Westboro Village", "Manotick", "Greely", "Cumberland Estates", "Nepean"],
   gallery: [
     {
-      image: "assets/images/hero-lower-level-lighting.png",
+      image: "assets/images/optimized/hero-lower-level-lighting-1200.jpg",
       alt: "Ottawa home with lower-level porch, garage, shrub, and walkway Christmas lights",
       title: "Entryways",
       category: "Entryways"
     },
     {
-      image: "assets/images/porch-entry-lighting.png",
+      image: "assets/images/optimized/porch-entry-lighting-1200.jpg",
       alt: "Christmas porch with wreath, garland, bows, and warm white lights",
       title: "Porches",
       category: "Porches"
     },
     {
-      image: "assets/images/porch-entry-lighting.png",
+      image: "assets/images/optimized/porch-entry-lighting-1200.jpg",
       alt: "Lower-level Christmas garland and railing lights on a snowy porch",
       title: "Wreaths & Garlands",
       category: "Wreaths & garlands"
     },
     {
-      image: "assets/images/garage-walkway-lighting.png",
+      image: "assets/images/optimized/garage-walkway-lighting-1200.jpg",
       alt: "Lit shrubs and small evergreens along a winter walkway",
       title: "Trees & Shrubs",
       category: "Trees & shrubs"
     },
     {
-      image: "assets/images/garage-walkway-lighting.png",
+      image: "assets/images/optimized/garage-walkway-lighting-1200.jpg",
       alt: "Garage trim, shrubs, and walkway lighting for a winter holiday home",
       title: "Walkways",
       category: "Walkways"
     },
     {
-      image: "assets/images/commercial-storefront-lighting.png",
+      image: "assets/images/optimized/commercial-storefront-lighting-1200.jpg",
       alt: "Commercial storefront decorated with Christmas garland and warm lights",
       title: "Commercial Storefronts",
       category: "Commercial storefronts"

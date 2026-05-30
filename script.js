@@ -18,6 +18,8 @@ const icons = {
 };
 
 const icon = (name) => `<span class="icon" aria-hidden="true">${icons[name] || icons.sparkle}</span>`;
+const smallImage = (src) => src.replace("-1200.jpg", "-640.jpg");
+const imageSrcset = (src) => `${smallImage(src)} 640w, ${src} 1200w`;
 
 document.querySelectorAll("[data-icon]").forEach((el) => {
   el.innerHTML = icons[el.dataset.icon] || icons.sparkle;
@@ -55,7 +57,7 @@ setHTML("services-grid", data.services.map((service) => `
     <div class="service-icon">${icon(service.icon)}</div>
     <h3>${service.title}</h3>
     <p>${service.text}</p>
-    <img src="${service.image}" width="1536" height="1024" alt="${service.alt}" loading="lazy">
+    <img src="${smallImage(service.image)}" srcset="${imageSrcset(service.image)}" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1180px) 33vw, 280px" width="640" height="427" alt="${service.alt}" loading="lazy" decoding="async">
   </article>
 `).join(""));
 
@@ -91,7 +93,7 @@ setHTML("area-list", data.areas.map((area) => `<span>${area}</span>`).join(""));
 
 setHTML("gallery-grid", data.gallery.map((item) => `
   <figure>
-    <img src="${item.image}" width="1536" height="1024" alt="${item.alt}" loading="lazy">
+    <img src="${smallImage(item.image)}" srcset="${imageSrcset(item.image)}" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1180px) 33vw, 280px" width="640" height="427" alt="${item.alt}" loading="lazy" decoding="async">
     <figcaption><span>${item.category}</span>${item.title}</figcaption>
   </figure>
 `).join(""));

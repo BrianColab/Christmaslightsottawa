@@ -30,6 +30,14 @@ function absoluteUrl(pathname) {
   return `${site.canonicalBase}${pathname}`;
 }
 
+function smallImage(src) {
+  return src.replace("-1200.jpg", "-640.jpg");
+}
+
+function imageSrcset(src) {
+  return `${smallImage(src)} 640w, ${src} 1200w`;
+}
+
 function jsonLd(data) {
   return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
 }
@@ -48,6 +56,7 @@ function layout({ title, description, canonical, h1, eyebrow, intro, body, schem
     <meta property="og:description" content="${escapeHtml(description)}">
     <meta property="og:image" content="${escapeHtml(absoluteUrl(image))}">
     <meta property="og:type" content="website">
+    <link rel="preload" as="image" href="${escapeHtml(image)}" imagesrcset="${escapeHtml(imageSrcset(image))}" imagesizes="(max-width: 1180px) 100vw, 50vw">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,8 +64,9 @@ function layout({ title, description, canonical, h1, eyebrow, intro, body, schem
     ${schemas}
   </head>
   <body>
+    <a class="skip-link" href="#content">Skip to main content</a>
     ${renderHeader()}
-    <main>
+    <main id="content">
       <section class="section article-hero">
         <div>
           <p class="eyebrow">${escapeHtml(eyebrow)}</p>
@@ -67,7 +77,7 @@ function layout({ title, description, canonical, h1, eyebrow, intro, body, schem
             <a class="button button-secondary" href="tel:6137447336" data-cta="article-hero-phone">Call or Text 613-744-7336</a>
           </div>
         </div>
-        <img src="${escapeHtml(image)}" width="1536" height="1024" alt="${escapeHtml(h1)}">
+        <img src="${escapeHtml(image)}" srcset="${escapeHtml(imageSrcset(image))}" sizes="(max-width: 1180px) 100vw, 50vw" width="1200" height="800" alt="${escapeHtml(h1)}" decoding="async">
       </section>
       ${body}
     </main>
@@ -211,7 +221,7 @@ function renderFaqs(faqs) {
 function renderBlogIndex() {
   const body = `<section class="section"><div class="blog-grid">${blogPosts.map((post) => `
     <article class="blog-card">
-      <img src="${escapeHtml(post.image)}" width="1536" height="1024" alt="${escapeHtml(post.title)}">
+      <img src="${escapeHtml(smallImage(post.image))}" srcset="${escapeHtml(imageSrcset(post.image))}" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 1180px) 50vw, 360px" width="640" height="427" alt="${escapeHtml(post.title)}" loading="lazy" decoding="async">
       <div>
         <p class="eyebrow">${escapeHtml(post.primaryKeyword)}</p>
         <h2><a href="/blog/${post.slug}">${escapeHtml(post.title)}</a></h2>
@@ -227,7 +237,7 @@ function renderBlogIndex() {
     eyebrow: "Blog",
     h1: "Christmas light installation and holiday decorating guides for Ottawa",
     intro: "Helpful local articles about lower-level Christmas lighting, wreaths, garlands, commercial displays, takedown, storage, and booking professional Christmas light installers in Ottawa.",
-    image: "/assets/images/porch-entry-lighting.png",
+    image: "/assets/images/optimized/porch-entry-lighting-1200.jpg",
     body,
     schema: [localBusinessSchema(), breadcrumbSchema([{ name: "Home", url: "/" }, { name: "Blog", url: "/blog" }])]
   });
@@ -291,7 +301,7 @@ function renderServiceArea(area) {
     eyebrow: `Christmas light installation ${area.city}`,
     h1: `Christmas Light Installation ${area.city}`,
     intro: `Professional holiday decorating in ${area.city} for entryways, porches, railings, wreaths, garlands, walkways, shrubs, small trees, storefronts, takedown, and storage.`,
-    image: "/assets/images/hero-lower-level-lighting.png",
+    image: "/assets/images/optimized/hero-lower-level-lighting-1200.jpg",
     body,
     schema: [
       localBusinessSchema(),
@@ -319,6 +329,7 @@ ${urls.map((url) => `  <url><loc>${absoluteUrl(url)}</loc></url>`).join("\n")}
 function send(res, statusCode, body, contentType = "text/plain; charset=utf-8") {
   res.writeHead(statusCode, {
     "Content-Type": contentType,
+    "Cache-Control": "no-cache",
     "X-Content-Type-Options": "nosniff"
   });
   res.end(body);

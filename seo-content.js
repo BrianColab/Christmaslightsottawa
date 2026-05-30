@@ -5,7 +5,7 @@ const site = {
   canonicalBase: "https://christmaslightsottawa.com",
   description:
     "Professional Christmas light installation and holiday decorating in Ottawa, focused on entryways, porches, railings, wreaths, garlands, walkways, shrubs, storefronts, takedown, and storage.",
-  image: "/assets/images/hero-lower-level-lighting.png"
+  image: "/assets/images/optimized/hero-lower-level-lighting-1200.jpg"
 };
 
 const sharedFaqs = [
@@ -46,7 +46,7 @@ const blogPosts = [
     primaryKeyword: "Christmas light installation Ottawa",
     secondaryKeywords: ["professional Christmas light installation Ottawa", "holiday decorating Ottawa", "Christmas lights Ottawa"],
     serviceArea: "Ottawa",
-    image: "/assets/images/hero-lower-level-lighting.png",
+    image: "/assets/images/optimized/hero-lower-level-lighting-1200.jpg",
     sections: [
       {
         heading: "Why homeowners hire professional Christmas light installers",
@@ -90,7 +90,7 @@ const blogPosts = [
     primaryKeyword: "lower-level Christmas lighting Ottawa",
     secondaryKeywords: ["holiday lighting Ottawa", "outdoor Christmas decorating Ottawa", "Christmas decorating Ottawa"],
     serviceArea: "Ottawa",
-    image: "/assets/images/porch-entry-lighting.png",
+    image: "/assets/images/optimized/porch-entry-lighting-1200.jpg",
     sections: [
       {
         heading: "Start with the front door",
@@ -129,7 +129,7 @@ const blogPosts = [
     primaryKeyword: "Christmas light installation cost Ottawa",
     secondaryKeywords: ["Christmas light installation Ottawa", "Christmas light takedown Ottawa", "Christmas light storage Ottawa"],
     serviceArea: "Ottawa",
-    image: "/assets/images/garage-walkway-lighting.png",
+    image: "/assets/images/optimized/garage-walkway-lighting-1200.jpg",
     sections: [
       {
         heading: "Every project is custom",
@@ -168,7 +168,7 @@ const blogPosts = [
     primaryKeyword: "Christmas wreaths and garlands Ottawa",
     secondaryKeywords: ["wreaths and garlands Ottawa", "holiday decorating Ottawa", "Christmas decorating Ottawa"],
     serviceArea: "Ottawa",
-    image: "/assets/images/porch-entry-lighting.png",
+    image: "/assets/images/optimized/porch-entry-lighting-1200.jpg",
     sections: [
       {
         heading: "Make the entrance the feature",
@@ -207,7 +207,7 @@ const blogPosts = [
     primaryKeyword: "commercial Christmas decorating Ottawa",
     secondaryKeywords: ["commercial Christmas lights Ottawa", "holiday decorating Ottawa", "outdoor Christmas decorating Ottawa"],
     serviceArea: "Ottawa",
-    image: "/assets/images/commercial-storefront-lighting.png",
+    image: "/assets/images/optimized/commercial-storefront-lighting-1200.jpg",
     sections: [
       {
         heading: "Storefronts and entrances set the tone",
@@ -246,7 +246,7 @@ const blogPosts = [
     primaryKeyword: "when to book Christmas light installation Ottawa",
     secondaryKeywords: ["Christmas light installers Ottawa", "holiday lighting Ottawa", "Christmas light takedown Ottawa"],
     serviceArea: "Ottawa",
-    image: "/assets/images/hero-lower-level-lighting.png",
+    image: "/assets/images/optimized/hero-lower-level-lighting-1200.jpg",
     sections: [
       {
         heading: "Fall is the best time to start planning",

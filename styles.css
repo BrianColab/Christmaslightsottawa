@@ -99,6 +99,25 @@ textarea {
   border: 0;
 }
 
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 100;
+  transform: translateY(-150%);
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  background: var(--dark-red);
+  color: #fff;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -954,7 +973,7 @@ fieldset {
   align-items: center;
   background:
     linear-gradient(rgba(18, 61, 42, 0.9), rgba(18, 61, 42, 0.9)),
-    url("assets/images/porch-entry-lighting.png") center/cover;
+    url("assets/images/optimized/porch-entry-lighting-1200.jpg") center/cover;
   color: #fff;
 }
 
@@ -1402,7 +1421,7 @@ fieldset {
   border-radius: var(--radius);
   background:
     linear-gradient(90deg, rgba(126, 9, 9, 0.95), rgba(126, 9, 9, 0.78)),
-    url("assets/images/garage-walkway-lighting.png") center/cover;
+    url("assets/images/optimized/garage-walkway-lighting-1200.jpg") center/cover;
   color: #fff;
   box-shadow: var(--shadow);
 }

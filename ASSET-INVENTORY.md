@@ -4,10 +4,14 @@ This is the current launch asset inventory for the new Christmas Lights Ottawa w
 
 ## Images currently in the repo
 
-- `assets/images/hero-lower-level-lighting.png` - AI placeholder for lower-level home lighting, used in the hero, gallery, services, Open Graph, and some blog pages.
-- `assets/images/porch-entry-lighting.png` - AI placeholder for porch, wreath, garland, and entryway decorating.
-- `assets/images/garage-walkway-lighting.png` - AI placeholder for garage trim, shrubs, walkway accents, and pricing/blog visuals.
-- `assets/images/commercial-storefront-lighting.png` - AI placeholder for commercial storefront decorating.
+- `assets/images/hero-lower-level-lighting.png` - original AI placeholder source for lower-level home lighting.
+- `assets/images/porch-entry-lighting.png` - original AI placeholder source for porch, wreath, garland, and entryway decorating.
+- `assets/images/garage-walkway-lighting.png` - original AI placeholder source for garage trim, shrubs, walkway accents, and pricing/blog visuals.
+- `assets/images/commercial-storefront-lighting.png` - original AI placeholder source for commercial storefront decorating.
+- `assets/images/optimized/*-1200.jpg` - compressed 1200px display images used for hero, Open Graph, article heroes, and larger responsive slots.
+- `assets/images/optimized/*-640.jpg` - compressed 640px card/gallery images used through responsive `srcset`.
+
+The optimized JPEGs are now used by the website. The larger PNG files are retained as editable/source placeholders until real client photography is provided.
 
 ## Logo and brand assets
 
