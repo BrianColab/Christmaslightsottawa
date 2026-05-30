@@ -337,6 +337,39 @@ h2,
   transform: rotate(-8deg);
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  top: 54px;
+  z-index: 4;
+  width: 260px;
+  height: 164px;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 66%, #fff0a8 0 4px, rgba(255, 220, 90, 0.88) 5px 7px, transparent 8px),
+    radial-gradient(circle at 58% 23%, #fff0a8 0 4px, rgba(255, 220, 90, 0.9) 5px 7px, transparent 8px),
+    radial-gradient(circle at 78% 50%, #fff0a8 0 3px, rgba(255, 220, 90, 0.82) 4px 6px, transparent 7px),
+    radial-gradient(ellipse at 72% 34%, rgba(18, 61, 42, 0.98) 0 8px, transparent 9px),
+    radial-gradient(ellipse at 58% 28%, rgba(36, 90, 63, 0.96) 0 8px, transparent 9px),
+    radial-gradient(ellipse at 44% 34%, rgba(18, 61, 42, 0.94) 0 8px, transparent 9px),
+    radial-gradient(ellipse at 32% 42%, rgba(36, 90, 63, 0.92) 0 8px, transparent 9px),
+    radial-gradient(ellipse at 22% 52%, rgba(18, 61, 42, 0.9) 0 8px, transparent 9px),
+    radial-gradient(ellipse at 46% 70%, rgba(18, 61, 42, 0.94) 0 8px, transparent 9px),
+    linear-gradient(162deg, transparent 0 22%, rgba(18, 61, 42, 0.95) 23% 28%, transparent 29%),
+    linear-gradient(170deg, transparent 0 34%, rgba(36, 90, 63, 0.92) 35% 40%, transparent 41%),
+    linear-gradient(188deg, transparent 0 46%, rgba(18, 61, 42, 0.9) 47% 52%, transparent 53%),
+    linear-gradient(96deg, transparent 0 39%, rgba(18, 61, 42, 0.92) 40% 46%, transparent 47%),
+    radial-gradient(circle at 47% 54%, #c91f1f 0 18px, #8f0b0b 19px 21px, transparent 22px),
+    linear-gradient(134deg, transparent 0 39%, #c91f1f 40% 57%, transparent 58%),
+    linear-gradient(45deg, transparent 0 40%, var(--deep-red) 41% 58%, transparent 59%),
+    linear-gradient(82deg, transparent 0 43%, #b90f0f 44% 56%, transparent 57%);
+  filter:
+    drop-shadow(0 0 8px rgba(255, 222, 96, 0.72))
+    drop-shadow(0 14px 18px rgba(31, 27, 22, 0.18));
+  transform: rotate(7deg);
+}
+
 .hero-corner-wreaths {
   position: absolute;
   left: 54px;
@@ -1713,6 +1746,13 @@ fieldset {
     transform-origin: top left;
   }
 
+  .hero::after {
+    right: -46px;
+    top: 66px;
+    transform: scale(0.76) rotate(7deg);
+    transform-origin: top right;
+  }
+
   .trust-strip::before,
   .trust-strip::after {
     width: 132px;
@@ -1792,6 +1832,12 @@ fieldset {
     left: -28px;
     top: 58px;
     transform: scale(0.58) rotate(-8deg);
+  }
+
+  .hero::after {
+    right: -68px;
+    top: 72px;
+    transform: scale(0.54) rotate(7deg);
   }
 
   .hero-title-divider {
