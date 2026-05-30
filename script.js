@@ -188,20 +188,64 @@ function createQuoteDrawer() {
       <h2 id="quote-drawer-title">Tell us what you want decorated.</h2>
       <p>Send the basics and we will help plan a warm, polished lower-level holiday display for your home or business.</p>
       <form class="drawer-form" data-drawer-form>
+        <div class="form-row">
+          <label>
+            Full Name*
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email*
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+        </div>
+        <div class="form-row">
+          <label>
+            Phone*
+            <input type="tel" name="phone" autocomplete="tel" required>
+          </label>
+          <label>
+            Preferred Contact Method
+            <select name="preferred-contact">
+              <option value="">Select one</option>
+              <option>Phone</option>
+              <option>Text</option>
+              <option>Email</option>
+            </select>
+          </label>
+        </div>
         <label>
-          Full Name*
-          <input type="text" name="name" autocomplete="name" required>
+          Property Address*
+          <input type="text" name="address" autocomplete="street-address" required>
         </label>
         <label>
-          Phone or Email*
-          <input type="text" name="contact" autocomplete="email" required>
+          Property Type
+          <select name="property-type">
+            <option value="">Select one</option>
+            <option>Home</option>
+            <option>Townhome</option>
+            <option>Condo / Apartment</option>
+            <option>Retail storefront</option>
+            <option>Office / Commercial property</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <fieldset>
+          <legend>Services interested in</legend>
+          <div class="checkbox-grid drawer-checkboxes">
+            ${data.formServices.map((item) => `
+              <label class="check-option">
+                <input type="checkbox" name="services" value="${item}">
+                <span>${item}</span>
+              </label>
+            `).join("")}
+          </div>
+        </fieldset>
+        <label>
+          Upload Photos
+          <input type="file" name="photos" accept="image/*" multiple>
         </label>
         <label>
-          Property Address
-          <input type="text" name="address" autocomplete="street-address">
-        </label>
-        <label>
-          What areas should we decorate?
+          Project Details
           <textarea name="details" rows="4" placeholder="Entryway, porch, railings, shrubs, walkways, storefront..."></textarea>
         </label>
         <button class="button button-primary" type="submit">Request a Free Quote</button>
