@@ -12,6 +12,7 @@ window.siteData = {
     { label: "Services", href: "/#services" },
     { label: "Our Process", href: "/#process" },
     { label: "Gallery", href: "/#gallery" },
+    { label: "Blog", href: "/blog" },
     { label: "FAQ", href: "/#faq" },
     { label: "Contact", href: "/#contact" }
   ],
