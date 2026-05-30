@@ -123,6 +123,22 @@ window.siteData = {
       text: "Full lower-level decorating plan with lighting, greenery, maintenance, takedown, and storage."
     }
   ],
+  formServices: [
+    "Entryway, wreaths, garlands, and bows",
+    "Porch, railing, and column decorating",
+    "Lower-level trim and garage accents",
+    "Tree, shrub, and landscape lighting",
+    "Walkway and driveway accents",
+    "Commercial storefront decorating",
+    "Takedown and storage"
+  ],
+  referralSources: [
+    "Google Search",
+    "Social Media",
+    "Tradeshow",
+    "Word of Mouth",
+    "Referral"
+  ],
   proof: [
     "Over 10 years serving Ottawa homes and businesses.",
     "Fully insured installation with season-long maintenance included.",

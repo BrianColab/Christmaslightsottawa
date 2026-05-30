@@ -66,6 +66,18 @@ document.getElementById("packages-grid").innerHTML = data.packages.map((item, in
   </article>
 `).join("");
 
+document.getElementById("form-services").innerHTML = data.formServices.map((item, index) => `
+  <label class="check-option">
+    <input type="checkbox" name="services" value="${item}">
+    <span>${item}</span>
+  </label>
+`).join("");
+
+document.getElementById("referral-source").innerHTML = `
+  <option value="">Select one</option>
+  ${data.referralSources.map((item) => `<option value="${item}">${item}</option>`).join("")}
+`;
+
 document.getElementById("proof-list").innerHTML = data.proof.map((item) => `
   <p>${icon("shield")}<span>${item}</span></p>
 `).join("");

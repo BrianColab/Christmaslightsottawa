@@ -39,7 +39,7 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="button button-primary header-cta" href="#quote">
+      <a class="button button-primary header-cta" href="#quote-form">
         <span aria-hidden="true" data-icon="calendar"></span>
         Request a Free Quote
       </a>
@@ -64,7 +64,7 @@
               <span aria-hidden="true" data-icon="phone"></span>
               Call or Text 613-744-7336
             </a>
-            <a class="button button-secondary" href="#quote">
+            <a class="button button-secondary" href="#quote-form">
               <span aria-hidden="true" data-icon="calendar"></span>
               Request a Free Quote
             </a>
@@ -189,6 +189,86 @@
         <div class="gallery-grid" id="gallery-grid"></div>
       </section>
 
+      <section class="section quote-section" id="quote-form" aria-labelledby="quote-form-title">
+        <div class="quote-intro">
+          <p class="eyebrow">Request a free quote</p>
+          <h2 id="quote-form-title">Send your address and a few photos.</h2>
+          <p>
+            A decoration consultant can review your property, help shape a warm lower-level display, and prepare a customized estimate.
+          </p>
+        </div>
+
+        <form class="quote-form" action="mailto:info@christmaslightsottawa.com" method="post" enctype="text/plain">
+          <div class="form-row">
+            <label>
+              First Name*
+              <input type="text" name="first-name" autocomplete="given-name" required>
+            </label>
+            <label>
+              Last Name*
+              <input type="text" name="last-name" autocomplete="family-name" required>
+            </label>
+          </div>
+
+          <label>
+            Street Address*
+            <input type="text" name="street-address" autocomplete="street-address" required>
+          </label>
+
+          <div class="form-row">
+            <label>
+              City*
+              <input type="text" name="city" autocomplete="address-level2" required>
+            </label>
+            <label>
+              Postal Code*
+              <input type="text" name="postal-code" autocomplete="postal-code" required>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Phone*
+              <input type="tel" name="phone" autocomplete="tel" required>
+            </label>
+            <label>
+              Email*
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+
+          <fieldset>
+            <legend>I am interested in the following services:*</legend>
+            <div class="checkbox-grid" id="form-services"></div>
+          </fieldset>
+
+          <label>
+            How did you hear about us?
+            <select name="referral-source" id="referral-source"></select>
+          </label>
+
+          <label>
+            Special requests, questions, or instructions:
+            <textarea name="special-requests" rows="5"></textarea>
+          </label>
+
+          <label>
+            Attach up to 5 pictures of the areas you are interested in decorating
+            <input type="file" name="photos" accept="image/*" multiple>
+          </label>
+
+          <label class="agreement">
+            <input type="checkbox" name="agreement" required>
+            <span>Yes, I would like a professional Christmas decoration consultation and estimate. Please have a decoration consultant call to provide free professional customized advice and discuss my options.</span>
+          </label>
+
+          <button class="button button-primary button-phone" type="submit">
+            <span aria-hidden="true" data-icon="calendar"></span>
+            Request a Free Quote
+          </button>
+        </form>
+      </section>
+
       <section class="final-cta" id="quote" aria-labelledby="quote-title">
         <div>
           <p class="eyebrow">Request a quote</p>
@@ -196,7 +276,7 @@
           <p>Send your address and a few photos. We&rsquo;ll help design a warm, polished holiday look for your home or business.</p>
         </div>
         <div class="final-actions" id="contact">
-          <a class="button button-light" href="mailto:info@christmaslightsottawa.com?subject=Request%20a%20Free%20Quote">
+          <a class="button button-light" href="#quote-form">
             <span aria-hidden="true" data-icon="calendar"></span>
             Request a Free Quote
           </a>

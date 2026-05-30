@@ -45,6 +45,30 @@ a {
   color: inherit;
 }
 
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 48px;
+  margin-top: 7px;
+  padding: 12px 13px;
+  border: 1px solid rgba(126, 9, 9, 0.18);
+  border-radius: var(--radius);
+  background: rgba(255, 248, 231, 0.86);
+  color: var(--text-dark);
+}
+
+textarea {
+  resize: vertical;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -377,6 +401,7 @@ h3 {
 
 .positioning-strip > *,
 .section > *,
+.quote-section > *,
 .final-cta > * {
   min-width: 0;
 }
@@ -588,6 +613,86 @@ h3 {
   border-radius: var(--radius);
   background: rgba(255, 248, 231, 0.72);
   font-weight: 700;
+}
+
+.quote-section {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(360px, 1fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: start;
+  border-top: 1px solid var(--line);
+}
+
+.quote-intro {
+  position: sticky;
+  top: 112px;
+}
+
+.quote-intro p {
+  color: var(--muted);
+  font-size: 1.06rem;
+}
+
+.quote-form {
+  display: grid;
+  gap: 18px;
+  padding: clamp(22px, 3vw, 34px);
+  border: 1px solid rgba(126, 9, 9, 0.14);
+  border-radius: var(--radius);
+  background: rgba(255, 248, 231, 0.74);
+  box-shadow: 0 12px 32px rgba(31, 27, 22, 0.08);
+}
+
+.quote-form label,
+.quote-form legend {
+  color: var(--evergreen);
+  font-weight: 800;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.check-option,
+.agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px;
+  border: 1px solid rgba(126, 9, 9, 0.12);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.check-option input,
+.agreement input {
+  width: 18px;
+  min-height: 18px;
+  height: 18px;
+  margin: 3px 0 0;
+  flex: 0 0 auto;
+}
+
+.check-option span,
+.agreement span {
+  color: var(--text-dark);
+  font-weight: 600;
 }
 
 .packages-section {
@@ -897,8 +1002,13 @@ h3 {
   }
 
   .positioning-strip,
-  .decorate-section {
+  .decorate-section,
+  .quote-section {
     grid-template-columns: 1fr;
+  }
+
+  .quote-intro {
+    position: static;
   }
 }
 
@@ -978,7 +1088,13 @@ h3 {
   .proof-band,
   .gallery-grid,
   .positioning-strip,
+  .quote-section,
   .final-cta {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row,
+  .checkbox-grid {
     grid-template-columns: 1fr;
   }
 
