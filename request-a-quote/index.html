@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Request a Free Quote | Christmas Lights Ottawa</title>
+    <title>Request a Christmas Light Installation Quote | Christmas Lights Ottawa</title>
     <meta
       name="description"
-      content="Request a free Christmas light installation and holiday decorating quote in Ottawa. Send your address, photos, services, and project details."
+      content="Request a free quote for professional Christmas light installation and holiday decorating in Ottawa. Send your address, project details, and photos to get started."
     >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="primary-nav" id="primary-nav" data-nav>
+      <nav class="primary-nav" id="primary-nav" aria-label="Primary navigation" data-nav>
         <a href="/">Home</a>
         <a href="/#services">Services</a>
         <a href="/#process">Our Process</a>
@@ -59,7 +59,7 @@
           </div>
         </div>
 
-        <!-- TODO: Wire this front-end form to a production form handler before launch. -->
+        <!-- TODO: Connect quote form to email/form handler. -->
         <form class="quote-form" data-quote-form>
           <div class="form-row">
             <label>
@@ -126,7 +126,7 @@
             Submit Quote Request
           </button>
 
-          <p class="form-status" data-form-status hidden>
+          <p class="form-status" data-form-status tabindex="-1" hidden>
             Thanks. This form is ready visually, but submission still needs to be connected to a production form handler.
           </p>
         </form>

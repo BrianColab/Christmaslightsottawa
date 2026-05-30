@@ -45,6 +45,16 @@ a {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible {
+  outline: 3px solid rgba(200, 155, 60, 0.85);
+  outline-offset: 3px;
+}
+
 input,
 select,
 textarea,
@@ -63,6 +73,10 @@ textarea {
   border-radius: var(--radius);
   background: rgba(255, 248, 231, 0.86);
   color: var(--text-dark);
+}
+
+input[type="file"] {
+  padding-block: 10px;
 }
 
 textarea {
@@ -225,6 +239,7 @@ h2,
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: var(--cream-2);
+  cursor: pointer;
 }
 
 .menu-toggle span:not(.sr-only) {

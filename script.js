@@ -55,7 +55,7 @@ setHTML("services-grid", data.services.map((service) => `
     <div class="service-icon">${icon(service.icon)}</div>
     <h3>${service.title}</h3>
     <p>${service.text}</p>
-    <img src="${service.image}" alt="${service.alt}" loading="lazy">
+    <img src="${service.image}" width="1536" height="1024" alt="${service.alt}" loading="lazy">
   </article>
 `).join(""));
 
@@ -91,7 +91,7 @@ setHTML("area-list", data.areas.map((area) => `<span>${area}</span>`).join(""));
 
 setHTML("gallery-grid", data.gallery.map((item) => `
   <figure>
-    <img src="${item.image}" alt="${item.alt}" loading="lazy">
+    <img src="${item.image}" width="1536" height="1024" alt="${item.alt}" loading="lazy">
     <figcaption><span>${item.category}</span>${item.title}</figcaption>
   </figure>
 `).join(""));
@@ -110,7 +110,7 @@ function renderTestimonial() {
   if (!testimonialCard) return;
   const item = data.testimonials[testimonialIndex];
   testimonialCard.innerHTML = `
-    <div class="stars" aria-label="Five star rating">★★★★★</div>
+    <div class="stars">Client note</div>
     <blockquote>${item.quote}</blockquote>
     <p class="testimonial-name">- ${item.name}</p>
     <p class="testimonial-location">${item.location}</p>

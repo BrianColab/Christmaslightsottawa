@@ -17,7 +17,7 @@ window.siteData = {
   ],
   cta: {
     quoteLabel: "Request a Free Quote",
-    quoteHref: "/request-a-quote/",
+    quoteHref: "/request-a-quote",
     phoneLabel: "Call or Text 613-744-7336"
   },
   positioningPoints: [
@@ -28,7 +28,7 @@ window.siteData = {
   trustItems: [
     { icon: "calendar", title: "Over 10 years", text: "serving Ottawa" },
     { icon: "shield", title: "Fully", text: "insured" },
-    { icon: "sparkle", title: "Maintenance", text: "included" },
+    { icon: "sparkle", title: "Maintenance", text: "available" },
     { icon: "box", title: "Takedown and", text: "storage available" },
     { icon: "store", title: "Trusted by homes", text: "and businesses" }
   ],
@@ -161,7 +161,7 @@ window.siteData = {
   ],
   proof: [
     "Over 10 years serving Ottawa homes and businesses.",
-    "Fully insured installation with season-long maintenance included.",
+    "Fully insured installation with maintenance available throughout the season.",
     "Takedown and storage available so the whole season stays easy."
   ],
   testimonials: [
@@ -235,7 +235,7 @@ window.siteData = {
     },
     {
       question: "Do you offer maintenance during the season?",
-      answer: "Yes. Maintenance is included for the displays we install, so your lights and decorations stay looking their best throughout the holidays."
+      answer: "Yes. Maintenance is available throughout the season so your lights and decorations can stay looking their best."
     },
     {
       question: "What areas do you serve?",
