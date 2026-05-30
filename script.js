@@ -147,3 +147,116 @@ nav?.addEventListener("click", (event) => {
 
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
+
+function createQuoteDrawer() {
+  if (document.querySelector("[data-quote-drawer]")) return;
+
+  const drawer = document.createElement("aside");
+  drawer.className = "quote-drawer";
+  drawer.setAttribute("data-quote-drawer", "");
+  drawer.setAttribute("aria-hidden", "true");
+  drawer.innerHTML = `
+    <div class="quote-drawer-backdrop" data-quote-close></div>
+    <div class="quote-drawer-panel" role="dialog" aria-modal="true" aria-labelledby="quote-drawer-title">
+      <button class="quote-drawer-close" type="button" aria-label="Close quote form" data-quote-close>&times;</button>
+      <p class="eyebrow">Request a free quote</p>
+      <h2 id="quote-drawer-title">Tell us what you want decorated.</h2>
+      <p>Send the basics and we will help plan a warm, polished lower-level holiday display for your home or business.</p>
+      <form class="drawer-form" data-drawer-form>
+        <label>
+          Full Name*
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          Phone or Email*
+          <input type="text" name="contact" autocomplete="email" required>
+        </label>
+        <label>
+          Property Address
+          <input type="text" name="address" autocomplete="street-address">
+        </label>
+        <label>
+          What areas should we decorate?
+          <textarea name="details" rows="4" placeholder="Entryway, porch, railings, shrubs, walkways, storefront..."></textarea>
+        </label>
+        <button class="button button-primary" type="submit">Request a Free Quote</button>
+        <a class="text-link" href="/request-a-quote">Open the full quote form</a>
+        <p class="form-status" data-drawer-status tabindex="-1" hidden>This quick form is ready visually. Submission still needs the production email/form handler.</p>
+      </form>
+    </div>
+  `;
+
+  document.body.appendChild(drawer);
+}
+
+function setDrawerOpen(isOpen) {
+  const drawer = document.querySelector("[data-quote-drawer]");
+  if (!drawer) return;
+
+  drawer.classList.toggle("is-open", isOpen);
+  drawer.setAttribute("aria-hidden", String(!isOpen));
+  document.body.classList.toggle("drawer-open", isOpen);
+
+  if (isOpen) {
+    drawer.querySelector("input")?.focus();
+  }
+}
+
+createQuoteDrawer();
+
+if (!window.location.pathname.startsWith("/request-a-quote")) {
+  document.querySelectorAll('a[href="/request-a-quote"], a[href="/request-a-quote/"]').forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      setDrawerOpen(true);
+    });
+  });
+}
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest("[data-quote-close]")) {
+    setDrawerOpen(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    setDrawerOpen(false);
+  }
+});
+
+document.querySelector("[data-drawer-form]")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const status = document.querySelector("[data-drawer-status]");
+  if (status) {
+    status.hidden = false;
+    status.focus?.();
+  }
+});
+
+const header = document.querySelector("[data-header]");
+const updateHeaderState = () => {
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
+};
+
+updateHeaderState();
+window.addEventListener("scroll", updateHeaderState, { passive: true });
+
+const revealTargets = document.querySelectorAll(".section, .positioning-strip, .trust-strip, .service-areas, .final-cta, .article-hero");
+
+if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  revealTargets.forEach((target) => target.classList.add("reveal"));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  revealTargets.forEach((target) => revealObserver.observe(target));
+} else {
+  revealTargets.forEach((target) => target.classList.add("is-visible"));
+}
