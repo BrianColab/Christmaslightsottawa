@@ -361,6 +361,29 @@ h3 {
   font-size: clamp(1.05rem, 1.35vw, 1.25rem);
 }
 
+.christmas-countdown {
+  display: inline-flex;
+  align-items: center;
+  margin: 4px 0 0;
+  padding: 10px 14px;
+  border: 1px solid rgba(18, 61, 42, 0.16);
+  border-radius: var(--radius);
+  background: rgba(255, 248, 231, 0.76);
+  color: var(--evergreen);
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(31, 27, 22, 0.06);
+}
+
+.christmas-countdown::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 4px rgba(200, 155, 60, 0.16);
+}
+
 .hero-actions,
 .final-actions {
   display: flex;
@@ -1402,6 +1425,11 @@ fieldset {
   .hero-lede {
     max-width: min(350px, calc(100vw - 40px));
     font-size: 1rem;
+  }
+
+  .christmas-countdown {
+    max-width: min(350px, calc(100vw - 40px));
+    font-size: 0.95rem;
   }
 
   .hero-copy > *,

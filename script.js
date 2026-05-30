@@ -148,6 +148,31 @@ nav?.addEventListener("click", (event) => {
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
+function updateChristmasCountdown() {
+  const countdown = document.querySelector("[data-christmas-countdown]");
+  if (!countdown) return;
+
+  const now = new Date();
+  let christmas = new Date(now.getFullYear(), 11, 25);
+
+  if (now > christmas) {
+    christmas = new Date(now.getFullYear() + 1, 11, 25);
+  }
+
+  const dayMs = 1000 * 60 * 60 * 24;
+  const days = Math.ceil((christmas - now) / dayMs);
+  const label = days === 1 ? "day" : "days";
+
+  if (days === 0) {
+    countdown.textContent = "Merry Christmas from Christmas Lights Ottawa.";
+    return;
+  }
+
+  countdown.textContent = `${days} ${label} until Christmas. Book early for the best holiday decorating plan.`;
+}
+
+updateChristmasCountdown();
+
 function createQuoteDrawer() {
   if (document.querySelector("[data-quote-drawer]")) return;
 
