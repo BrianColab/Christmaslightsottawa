@@ -76,7 +76,7 @@
         <a href="/#contact">Contact</a>
       </nav>
 
-      <a class="button button-primary header-cta" href="tel:6137447336">
+      <a class="button button-primary header-cta" href="tel:6137447336" data-cta="quote-header-phone">
         <span aria-hidden="true" data-icon="phone"></span>
         Call or Text 613-744-7336
       </a>
@@ -88,19 +88,42 @@
           <p class="eyebrow">Request a free quote</p>
           <h1 id="quote-form-title">Tell us what you would like decorated.</h1>
           <p>
-            Send your address, a few photos, and the areas you want decorated. A Christmas Lights Ottawa consultant can review your property and recommend a warm, polished holiday decorating plan.
+            Tell us a little about your property and the holiday look you want. Photos are helpful, but not required to get started.
           </p>
           <div class="quote-contact-card">
             <p><strong>Prefer to talk?</strong></p>
-            <a href="tel:6137447336">Call or Text 613-744-7336</a>
+            <a href="tel:6137447336" data-cta="quote-intro-phone">Call or Text 613-744-7336</a>
+          </div>
+          <div class="quote-reassurance">
+            <h2>Why homeowners ask us first</h2>
+            <ul>
+              <li>Custom design</li>
+              <li>Professional installation</li>
+              <li>Maintenance available</li>
+              <li>Takedown and storage available</li>
+              <li>Serving Ottawa and surrounding communities</li>
+            </ul>
+          </div>
+          <div class="quote-next">
+            <h2>What happens next?</h2>
+            <ol>
+              <li>We review your request</li>
+              <li>We may ask for photos or details</li>
+              <li>We prepare a custom recommendation</li>
+              <li>You approve the quote before anything is booked</li>
+            </ol>
           </div>
         </div>
 
-        <!-- TODO: Connect quote form to email/form handler. -->
-        <form class="quote-form" data-quote-form>
+        <!-- TODO: Connect this form to email delivery, CRM, or form backend. -->
+        <form class="quote-form" data-quote-form novalidate>
+          <label class="form-honeypot" aria-hidden="true">
+            Leave this field blank
+            <input type="text" name="website" tabindex="-1" autocomplete="off">
+          </label>
           <div class="form-row">
             <label>
-              Name*
+              Full Name*
               <input type="text" name="name" autocomplete="name" required>
             </label>
             <label>
@@ -126,8 +149,9 @@
           </div>
 
           <label>
-            Address*
+            Property Address*
             <input type="text" name="address" autocomplete="street-address" required>
+            <span class="form-help">This helps us understand your property layout and service area.</span>
           </label>
 
           <label>
@@ -135,10 +159,8 @@
             <select name="property-type">
               <option value="">Select one</option>
               <option>Home</option>
-              <option>Townhome</option>
-              <option>Condo / Apartment</option>
-              <option>Retail storefront</option>
-              <option>Office / Commercial property</option>
+              <option>Business</option>
+              <option>Condo/Townhome</option>
               <option>Other</option>
             </select>
           </label>
@@ -151,20 +173,27 @@
           <label>
             Upload Photos
             <input type="file" name="photos" accept="image/*" multiple>
+            <span class="form-help">Photos of your front entrance, porch, garage, shrubs, walkway, trees, or storefront help us prepare a more accurate quote.</span>
           </label>
 
           <label>
             Message / Project Details
             <textarea name="message" rows="6" placeholder="Tell us about your entryway, porch, railings, shrubs, walkways, storefront, or any areas you want decorated."></textarea>
+            <span class="form-help">Tell us what areas you want decorated and the style you like, such as warm white, classic Christmas, elegant, simple, or full display.</span>
           </label>
 
-          <button class="button button-primary button-phone" type="submit">
+          <label class="agreement">
+            <input type="checkbox" name="consent" required>
+            <span>I agree to be contacted by Christmas Lights Ottawa about my quote request.</span>
+          </label>
+
+          <button class="button button-primary button-phone" type="submit" data-cta="quote-form-submit">
             <span aria-hidden="true" data-icon="calendar"></span>
-            Submit Quote Request
+            Request My Free Quote
           </button>
 
-          <p class="form-status" data-form-status tabindex="-1" hidden>
-            Thanks. This form is ready visually, but submission still needs to be connected to a production form handler.
+          <p class="form-status" data-form-status tabindex="-1" role="status" hidden>
+            This form is ready, but online submission still needs to be connected to email delivery, CRM, or a form backend.
           </p>
         </form>
       </section>
@@ -183,7 +212,7 @@
       <div class="footer-grid">
         <div>
           <h2>Christmas Lights Ottawa</h2>
-          <p>Professional Christmas light installation and holiday decorating in Ottawa, with maintenance, takedown, and storage available.</p>
+          <p>Christmas Lights Ottawa provides professional lower-level Christmas decorating, with maintenance, takedown, and storage available.</p>
         </div>
         <div>
           <h3>Quick Links</h3>
@@ -194,8 +223,8 @@
         </div>
         <div>
           <h3>Contact</h3>
-          <a href="tel:6137447336">Phone/Text: 613-744-7336</a>
-          <p>Serving Ottawa and surrounding communities.</p>
+          <a href="tel:6137447336" data-cta="quote-footer-phone">Call or Text: 613-744-7336</a>
+          <p>Serving Ottawa and surrounding communities. Email and address need client confirmation.</p>
         </div>
       </div>
       <p class="copyright">&copy; <span id="year"></span> Christmas Lights Ottawa. All rights reserved.</p>

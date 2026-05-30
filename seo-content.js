@@ -67,6 +67,11 @@ const blogPosts = [
         heading: "When to book",
         body:
           "Early booking helps with design planning, product availability, and preferred installation dates. Many homeowners start planning in fall so the display is ready before winter weather becomes unpredictable."
+      },
+      {
+        heading: "What to send with your quote request",
+        body:
+          "The most useful quote requests include the property address, a few photos of the front entrance, porch, garage, shrubs, walkways, and any storefront or landscape areas you want decorated. This helps the design conversation start with the parts guests and customers see first."
       }
     ],
     faqs: sharedFaqs.slice(0, 4)
@@ -101,6 +106,11 @@ const blogPosts = [
         heading: "Use shrubs, walkways, and small trees for depth",
         body:
           "Soft lighting on shrubs, small trees, garden beds, and walkways adds dimension. These details guide the eye toward the entry and make the whole property feel warm."
+      },
+      {
+        heading: "Keep the design connected",
+        body:
+          "Lower-level displays feel most premium when each area relates to the next. Matching warm white lighting, balanced greenery, and repeated bow or wreath details can connect the front door, porch, garage, shrubs, and walkway into one finished look."
       }
     ],
     faqs: sharedFaqs
@@ -135,6 +145,11 @@ const blogPosts = [
         heading: "Why a quote is the safest next step",
         body:
           "Exact pricing should be based on photos, property details, and the areas you want decorated. A custom quote helps match the right package to the property instead of guessing."
+      },
+      {
+        heading: "Takedown and storage can change the scope",
+        body:
+          "Some clients want installation only, while others prefer a complete seasonal service with maintenance, takedown, organizing, and storage. Including those preferences in the quote request helps keep the recommendation realistic."
       }
     ],
     faqs: sharedFaqs
@@ -169,6 +184,11 @@ const blogPosts = [
         heading: "Entryways work for homes and storefronts",
         body:
           "The same approach can help commercial storefronts feel welcoming. Garlands around doors or windows, a wreath, and subtle lighting can improve the customer experience during the holiday season."
+      },
+      {
+        heading: "Where entryway decorating works best",
+        body:
+          "Entryway decorating is especially useful for front doors, covered porches, railings, columns, window boxes, planters, garage-side entrances, and storefront doors where guests naturally pause."
       }
     ],
     faqs: sharedFaqs
@@ -203,6 +223,11 @@ const blogPosts = [
         heading: "Plan for maintenance and takedown",
         body:
           "Businesses should ask about seasonal maintenance and takedown before booking. Clear planning keeps the display looking good and helps avoid a rushed cleanup after the holidays."
+      },
+      {
+        heading: "What businesses should prepare before requesting a quote",
+        body:
+          "Helpful details include storefront photos, operating hours, access notes, landlord or property manager requirements, signage locations, and any customer traffic areas that need to stay clear during installation."
       }
     ],
     faqs: sharedFaqs
@@ -237,6 +262,11 @@ const blogPosts = [
         heading: "Remember takedown scheduling",
         body:
           "A good holiday decorating plan includes takedown timing and storage options. Ask about removal dates before booking so the full season is planned from start to finish."
+      },
+      {
+        heading: "What to decide before booking",
+        body:
+          "Before requesting a quote, decide which areas matter most: front door, porch, railings, garage, shrubs, walkway, small trees, storefront windows, or full lower-level decorating. A short priority list makes the design process faster."
       }
     ],
     faqs: sharedFaqs
@@ -249,42 +279,54 @@ const serviceAreas = [
     slug: "christmas-light-installation-kanata",
     angle:
       "Kanata homes often have inviting porches, garages, shrubs, and walkways that look excellent with warm lower-level holiday decorating.",
-    neighborhoods: "Bridlewood, Morgan's Grant, Beaverbrook, and surrounding Kanata communities"
+    neighborhoods: "Bridlewood, Morgan's Grant, Beaverbrook, and surrounding Kanata communities",
+    detail:
+      "Many Kanata properties have visible garages and front approaches, so lower trim, porch greenery, and walkway lighting can create a strong street-facing display without making upper rooflines the focus."
   },
   {
     city: "Stittsville",
     slug: "christmas-light-installation-stittsville",
     angle:
       "Stittsville properties are well suited to entryway lighting, porch garlands, garage trim, shrubs, and small tree accents that feel festive without overcomplicating the display.",
-    neighborhoods: "Stittsville Main, Fernbank, Crossing Bridge, and nearby neighbourhoods"
+    neighborhoods: "Stittsville Main, Fernbank, Crossing Bridge, and nearby neighbourhoods",
+    detail:
+      "For newer subdivisions and village-style homes, a connected entryway, garage, shrub, and walkway plan often gives the property a polished holiday look from both the curb and the front step."
   },
   {
     city: "Barrhaven",
     slug: "christmas-light-installation-barrhaven",
     angle:
       "Barrhaven homeowners can create a polished Christmas look with front doors, porch railings, lower trim, walkway lighting, shrubs, and seasonal greenery.",
-    neighborhoods: "Half Moon Bay, Chapman Mills, Stonebridge, and surrounding Barrhaven areas"
+    neighborhoods: "Half Moon Bay, Chapman Mills, Stonebridge, and surrounding Barrhaven areas",
+    detail:
+      "Barrhaven homes often benefit from warm porch accents, railings, garage trim, and shrubs that make the entrance feel welcoming while keeping the design practical for seasonal installation and takedown."
   },
   {
     city: "Orleans",
     slug: "christmas-light-installation-orleans",
     angle:
       "Orleans homes and storefronts can benefit from warm entryway displays, wreaths, garlands, walkway accents, shrubs, and commercial holiday decorating.",
-    neighborhoods: "Chapel Hill, Fallingbrook, Avalon, and nearby Orleans communities"
+    neighborhoods: "Chapel Hill, Fallingbrook, Avalon, and nearby Orleans communities",
+    detail:
+      "Orleans projects can range from family home entryways to small storefront displays, with wreaths, garlands, planters, walkways, and lower-level lighting creating a clean seasonal welcome."
   },
   {
     city: "Manotick",
     slug: "christmas-light-installation-manotick",
     angle:
       "Manotick properties often shine with classic wreaths, garlands, porch lighting, driveway accents, small trees, and elegant lower-level Christmas decorating.",
-    neighborhoods: "Manotick Village, Rideau Forest, Mahogany, and surrounding areas"
+    neighborhoods: "Manotick Village, Rideau Forest, Mahogany, and surrounding areas",
+    detail:
+      "Manotick homes often suit a more classic look, using wreaths, garlands, soft tree lighting, driveway accents, and warm entryway details that feel festive without clutter."
   },
   {
     city: "Nepean",
     slug: "christmas-light-installation-nepean",
     angle:
       "Nepean homes and businesses can use lower-level Christmas lighting, greenery, shrubs, walkways, and storefront details to create a warm seasonal welcome.",
-    neighborhoods: "Centrepointe, Craig Henry, Bells Corners, Merivale, and nearby Nepean communities"
+    neighborhoods: "Centrepointe, Craig Henry, Bells Corners, Merivale, and nearby Nepean communities",
+    detail:
+      "Nepean includes a mix of homes and commercial corridors, so quote requests can cover front entrances, garages, walkways, shrubs, office entries, retail storefronts, and seasonal takedown."
   }
 ];
 

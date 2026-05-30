@@ -63,8 +63,8 @@ function layout({ title, description, canonical, h1, eyebrow, intro, body, schem
           <h1>${escapeHtml(h1)}</h1>
           <p>${escapeHtml(intro)}</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="/request-a-quote">Request a Free Quote</a>
-            <a class="button button-secondary" href="tel:6137447336">Call or Text 613-744-7336</a>
+            <a class="button button-primary" href="/request-a-quote" data-cta="article-hero-request-quote">Request a Free Quote</a>
+            <a class="button button-secondary" href="tel:6137447336" data-cta="article-hero-phone">Call or Text 613-744-7336</a>
           </div>
         </div>
         <img src="${escapeHtml(image)}" width="1536" height="1024" alt="${escapeHtml(h1)}">
@@ -94,7 +94,7 @@ function renderHeader() {
       <a href="/#faq">FAQ</a>
       <a href="/#contact">Contact</a>
     </nav>
-    <a class="button button-primary header-cta" href="/request-a-quote">Request a Free Quote</a>
+    <a class="button button-primary header-cta" href="/request-a-quote" data-cta="dynamic-header-request-quote">Request a Free Quote</a>
   </header>`;
 }
 
@@ -104,7 +104,7 @@ function renderFooter() {
       <div>
         <h2>Christmas Lights Ottawa</h2>
         <p>${escapeHtml(site.description)}</p>
-        <a class="button button-primary" href="/request-a-quote">Request a Free Quote</a>
+        <a class="button button-primary" href="/request-a-quote" data-cta="dynamic-footer-request-quote">Request a Free Quote</a>
       </div>
       <div>
         <h3>Quick Links</h3>
@@ -114,13 +114,22 @@ function renderFooter() {
         <a href="/#faq">FAQ</a>
       </div>
       <div>
-        <h3>SEO Service Areas</h3>
+        <h3>Services</h3>
+        <a href="/#services">Christmas Light Installation Ottawa</a>
+        <a href="/blog/lower-level-christmas-lighting-ottawa">Lower-Level Christmas Lighting</a>
+        <a href="/blog/christmas-wreaths-garlands-entryway-decorating-ottawa">Wreaths &amp; Garlands</a>
+        <a href="/blog/commercial-christmas-decorating-ottawa">Commercial Christmas Decorating</a>
+        <a href="/#services">Takedown &amp; Storage</a>
+        <a href="/request-a-quote" data-cta="dynamic-footer-service-request-quote">Request a Free Quote</a>
+      </div>
+      <div>
+        <h3>Service Areas</h3>
         ${serviceAreas.slice(0, 6).map((area) => `<a href="/${area.slug}">Christmas light installation ${escapeHtml(area.city)}</a>`).join("")}
       </div>
       <div>
         <h3>Contact</h3>
-        <a href="tel:6137447336">Phone/Text: 613-744-7336</a>
-        <p>Serving Ottawa and surrounding communities.</p>
+        <a href="tel:6137447336" data-cta="dynamic-footer-phone">Call or Text: 613-744-7336</a>
+        <p>Serving Ottawa and surrounding communities. Email and address need client confirmation.</p>
       </div>
     </div>
     <p class="copyright">&copy; ${new Date().getFullYear()} Christmas Lights Ottawa. All rights reserved.</p>
@@ -227,9 +236,9 @@ function renderBlogIndex() {
 function renderBlogPost(post) {
   const related = blogPosts.filter((item) => item.slug !== post.slug).slice(0, 3);
   const body = `<article class="section article-body">
-    <p class="article-meta">Published ${escapeHtml(post.publishDate)} · Updated ${escapeHtml(post.updatedDate)} · ${escapeHtml(post.author)}</p>
+    <p class="article-meta">Published ${escapeHtml(post.publishDate)} &middot; Updated ${escapeHtml(post.updatedDate)} &middot; ${escapeHtml(post.author)}</p>
     ${post.sections.map((section) => `<h2>${escapeHtml(section.heading)}</h2><p>${escapeHtml(section.body)}</p>`).join("")}
-    <div class="article-cta"><h2>Ready to plan your display?</h2><p>Request a Christmas light quote for lower-level holiday decorating, wreaths, garlands, walkways, shrubs, storefronts, takedown, and storage.</p><a class="button button-primary" href="/request-a-quote">Request a Free Quote</a></div>
+    <div class="article-cta"><h2>Ready to plan your display?</h2><p>Request a Christmas light quote for lower-level holiday decorating, wreaths, garlands, walkways, shrubs, storefronts, takedown, and storage.</p><a class="button button-primary" href="/request-a-quote" data-cta="blog-request-quote">Request a Free Quote</a></div>
     <h2>Related articles</h2>
     <div class="related-grid">${related.map((item) => `<a href="/blog/${item.slug}">${escapeHtml(item.title)}</a>`).join("")}</div>
   </article>
@@ -265,12 +274,13 @@ function renderServiceArea(area) {
   const body = `<section class="section article-body">
     <h2>Holiday decorating services in ${escapeHtml(area.city)}</h2>
     <p>${escapeHtml(area.angle)}</p>
+    <p>${escapeHtml(area.detail)}</p>
     <p>Services can include entryway decorating, porch lighting, railings, columns, garage trim, wreaths, garlands, bows, shrubs, walkways, small trees, commercial storefront decorating, takedown, and storage.</p>
     <h2>How it works</h2>
     <p>Send your address and photos, review a tailored lower-level decorating plan, approve the quote, and schedule installation. Maintenance, takedown, and storage can be planned around your season.</p>
     <h2>Local areas served</h2>
     <p>${escapeHtml(area.neighborhoods)}.</p>
-    <div class="article-cta"><h2>Request Christmas light installation in ${escapeHtml(area.city)}</h2><p>Tell us what you want decorated and we will help recommend the right holiday decorating package.</p><a class="button button-primary" href="/request-a-quote">Request a Free Quote</a></div>
+    <div class="article-cta"><h2>Request Christmas light installation in ${escapeHtml(area.city)}</h2><p>Tell us what you want decorated and we will help recommend the right holiday decorating package.</p><a class="button button-primary" href="/request-a-quote" data-cta="service-area-request-quote">Request a Free Quote</a></div>
     <p><a class="text-link" href="/#services">View holiday decorating services in Ottawa</a> or read our <a class="text-link" href="/blog">Christmas lighting blog</a>.</p>
   </section>${renderFaqs(faqs)}`;
 

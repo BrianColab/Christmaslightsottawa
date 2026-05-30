@@ -168,7 +168,13 @@ function updateChristmasCountdown() {
     return;
   }
 
-  countdown.textContent = `${days} ${label} until Christmas. Book early for the best holiday decorating plan.`;
+  countdown.innerHTML = `
+    <span class="countdown-number">${days}</span>
+    <span class="countdown-copy">
+      <span class="countdown-label">${label} until Christmas</span>
+      <span class="countdown-subline">Book early for the best holiday decorating plan.</span>
+    </span>
+  `;
 }
 
 updateChristmasCountdown();
@@ -186,8 +192,12 @@ function createQuoteDrawer() {
       <button class="quote-drawer-close" type="button" aria-label="Close quote form" data-quote-close>&times;</button>
       <p class="eyebrow">Request a free quote</p>
       <h2 id="quote-drawer-title">Tell us what you want decorated.</h2>
-      <p>Send the basics and we will help plan a warm, polished lower-level holiday display for your home or business.</p>
-      <form class="drawer-form" data-drawer-form>
+      <p>Tell us a little about your property and the holiday look you want. Photos are helpful, but not required to get started.</p>
+      <form class="drawer-form" data-drawer-form novalidate>
+        <label class="form-honeypot" aria-hidden="true">
+          Leave this field blank
+          <input type="text" name="website" tabindex="-1" autocomplete="off">
+        </label>
         <div class="form-row">
           <label>
             Full Name*
@@ -222,10 +232,8 @@ function createQuoteDrawer() {
           <select name="property-type">
             <option value="">Select one</option>
             <option>Home</option>
-            <option>Townhome</option>
-            <option>Condo / Apartment</option>
-            <option>Retail storefront</option>
-            <option>Office / Commercial property</option>
+            <option>Business</option>
+            <option>Condo/Townhome</option>
             <option>Other</option>
           </select>
         </label>
@@ -243,14 +251,20 @@ function createQuoteDrawer() {
         <label>
           Upload Photos
           <input type="file" name="photos" accept="image/*" multiple>
+          <span class="form-help">Photos of your front entrance, porch, garage, shrubs, walkway, trees, or storefront help us prepare a more accurate quote.</span>
         </label>
         <label>
           Project Details
           <textarea name="details" rows="4" placeholder="Entryway, porch, railings, shrubs, walkways, storefront..."></textarea>
+          <span class="form-help">Tell us what areas you want decorated and the style you like.</span>
         </label>
-        <button class="button button-primary" type="submit">Request a Free Quote</button>
-        <a class="text-link" href="/request-a-quote">Open the full quote form</a>
-        <p class="form-status" data-drawer-status tabindex="-1" hidden>This quick form is ready visually. Submission still needs the production email/form handler.</p>
+        <label class="agreement">
+          <input type="checkbox" name="consent" required>
+          <span>I agree to be contacted by Christmas Lights Ottawa about my quote request.</span>
+        </label>
+        <button class="button button-primary" type="submit" data-cta="drawer-form-submit">Request My Free Quote</button>
+        <a class="text-link" href="/request-a-quote" data-cta="drawer-full-form">Open the full quote form</a>
+        <p class="form-status" data-drawer-status tabindex="-1" role="status" hidden>This form is ready, but online submission still needs to be connected to email delivery, CRM, or a form backend.</p>
       </form>
     </div>
   `;
@@ -294,11 +308,68 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+function clearFormErrors(form) {
+  form.querySelectorAll(".field-error").forEach((error) => error.remove());
+  form.querySelectorAll(".has-error").forEach((field) => field.classList.remove("has-error"));
+}
+
+function showFieldError(field, message) {
+  const container = field.closest("label, fieldset") || field.parentElement;
+  if (!container) return;
+  container.classList.add("has-error");
+  const error = document.createElement("span");
+  error.className = "field-error";
+  error.textContent = message;
+  container.appendChild(error);
+}
+
+function validateQuoteForm(form) {
+  clearFormErrors(form);
+  const honeypot = form.elements.website;
+  if (honeypot?.value.trim()) return false;
+
+  const requiredFields = [
+    ["name", "Please enter your full name."],
+    ["email", "Please enter a valid email address."],
+    ["phone", "Please enter your phone number."],
+    ["address", "Please enter the property address."]
+  ];
+  let isValid = true;
+
+  requiredFields.forEach(([name, message]) => {
+    const field = form.elements[name];
+    if (!field || !field.value.trim() || (name === "email" && !field.checkValidity())) {
+      showFieldError(field, message);
+      isValid = false;
+    }
+  });
+
+  if (!form.querySelector('input[name="services"]:checked')) {
+    const services = form.querySelector("fieldset");
+    if (services) showFieldError(services, "Please select at least one service.");
+    isValid = false;
+  }
+
+  const consent = form.elements.consent;
+  if (consent && !consent.checked) {
+    showFieldError(consent, "Please confirm we can contact you about this quote request.");
+    isValid = false;
+  }
+
+  return isValid;
+}
+
 document.querySelector("[data-drawer-form]")?.addEventListener("submit", (event) => {
   event.preventDefault();
+  const form = event.currentTarget;
   const status = document.querySelector("[data-drawer-status]");
+  if (!validateQuoteForm(form)) {
+    form.querySelector(".field-error")?.scrollIntoView({ behavior: "smooth", block: "center" });
+    return;
+  }
   if (status) {
     status.hidden = false;
+    status.textContent = "This form is ready, but online submission still needs to be connected to email delivery, CRM, or a form backend.";
     status.focus?.();
   }
 });

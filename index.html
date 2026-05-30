@@ -79,7 +79,7 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="button button-primary header-cta" href="/request-a-quote">
+      <a class="button button-primary header-cta" href="/request-a-quote" data-cta="header-request-quote">
         <span aria-hidden="true" data-icon="calendar"></span>
         Request a Free Quote
       </a>
@@ -99,21 +99,18 @@
           <p class="hero-lede">
             Lower-level holiday lighting, wreaths, garlands, walkways, trees, and storefront displays, professionally installed and maintained.
           </p>
-          <p class="christmas-countdown" data-christmas-countdown aria-live="polite">
-            Planning your holiday display...
-          </p>
           <div class="hero-actions">
-            <a class="button button-primary button-phone" href="tel:6137447336">
+            <a class="button button-primary button-phone" href="tel:6137447336" data-cta="hero-phone">
               <span aria-hidden="true" data-icon="phone"></span>
               Call or Text 613-744-7336
             </a>
-            <a class="button button-secondary" href="/request-a-quote">
+            <a class="button button-secondary" href="/request-a-quote" data-cta="hero-request-quote">
               <span aria-hidden="true" data-icon="calendar"></span>
               Request a Free Quote
             </a>
           </div>
           <ul class="trust-badges" aria-label="Trust highlights">
-            <li><span aria-hidden="true" data-icon="shield"></span> Fully Insured</li>
+            <li><span aria-hidden="true" data-icon="store"></span> Ottawa Homes &amp; Businesses</li>
             <li><span aria-hidden="true" data-icon="sparkle"></span> Maintenance Available</li>
             <li><span aria-hidden="true" data-icon="box"></span> Takedown Available</li>
           </ul>
@@ -126,6 +123,13 @@
             height="1024"
             alt="Ottawa home with warm lower-level Christmas lights on the porch, garage, shrubs, walkway, wreaths, and garlands"
           >
+          <div class="christmas-countdown" data-christmas-countdown aria-live="polite">
+            <span class="countdown-number">...</span>
+            <span class="countdown-copy">
+              <span class="countdown-label">days until Christmas</span>
+              <span class="countdown-subline">Book early for the best holiday decorating plan.</span>
+            </span>
+          </div>
           <div class="media-note">
             <span aria-hidden="true" data-icon="sparkle"></span>
             Front entry, porch, garage, shrubs, walkways, wreaths, and garlands.
@@ -172,7 +176,8 @@
           <p class="eyebrow">What we decorate</p>
           <h2 id="decorate-title">Beautiful holiday details where people actually see them.</h2>
           <p>
-            Our focus is beautiful, accessible holiday decorating that makes your property shine without turning your home into a construction project.
+            Beautiful holiday decorating for the parts guests see first: front doors, porches, walkways, shrubs, railings, garages, wreaths, and garlands.
+            Our focus is accessible holiday decorating that makes your property shine without turning your home into a construction project.
           </p>
         </div>
         <div class="decorate-grid" id="decorate-grid"></div>
@@ -226,13 +231,37 @@
       <section class="section blog-preview" aria-labelledby="blog-title">
         <div class="section-heading">
           <div class="ornament-divider" aria-hidden="true"></div>
-          <p class="eyebrow">Holiday decorating tips</p>
-          <h2 id="blog-title">Plan your Christmas light installation in Ottawa</h2>
+          <p class="eyebrow">Holiday Lighting Tips &amp; Ideas</p>
+          <h2 id="blog-title">Helpful planning notes for Ottawa homes and storefronts</h2>
         </div>
         <div class="blog-preview-grid">
-          <a href="/blog/christmas-light-installation-ottawa-guide">Christmas light installation in Ottawa</a>
-          <a href="/blog/lower-level-christmas-lighting-ottawa">Lower-level Christmas lighting ideas</a>
-          <a href="/blog/commercial-christmas-decorating-ottawa">Commercial Christmas decorating Ottawa</a>
+          <article class="blog-preview-card">
+            <img src="assets/images/hero-lower-level-lighting.png" width="1536" height="1024" alt="Lower-level Christmas lighting on an Ottawa home with porch, garage, wreaths, and walkway accents" loading="lazy">
+            <div>
+              <p class="eyebrow">Planning guide</p>
+              <h3><a href="/blog/christmas-light-installation-ottawa-guide">Christmas Light Installation in Ottawa: What Homeowners Should Know Before Booking</a></h3>
+              <p>What to consider before requesting a custom holiday decorating quote.</p>
+            </div>
+          </article>
+          <article class="blog-preview-card">
+            <img src="assets/images/porch-entry-lighting.png" width="1536" height="1024" alt="Ottawa porch decorated with wreaths, garlands, bows, and warm Christmas lights" loading="lazy">
+            <div>
+              <p class="eyebrow">Design ideas</p>
+              <h3><a href="/blog/lower-level-christmas-lighting-ottawa">Lower-Level Christmas Lighting Ideas for Ottawa Homes</a></h3>
+              <p>Entryways, porches, shrubs, walkways, garage trim, and greenery ideas.</p>
+            </div>
+          </article>
+          <article class="blog-preview-card">
+            <img src="assets/images/garage-walkway-lighting.png" width="1536" height="1024" alt="Ottawa lower-level Christmas lights with garage trim, shrubs, and walkway accents" loading="lazy">
+            <div>
+              <p class="eyebrow">Pricing factors</p>
+              <h3><a href="/blog/christmas-light-installation-cost-ottawa">How Much Does Christmas Light Installation Cost in Ottawa?</a></h3>
+              <p>Why pricing depends on property size, products, design, takedown, and storage.</p>
+            </div>
+          </article>
+        </div>
+        <div class="section-actions">
+          <a class="button button-secondary" href="/blog">View All Articles</a>
         </div>
       </section>
 
@@ -252,11 +281,11 @@
           <p>Send your address and a few photos. We&rsquo;ll help design a warm, polished holiday look for your home or business.</p>
         </div>
         <div class="final-actions">
-          <a class="button button-light" href="/request-a-quote">
+          <a class="button button-light" href="/request-a-quote" data-cta="final-request-quote">
             <span aria-hidden="true" data-icon="calendar"></span>
             Request a Free Quote
           </a>
-          <a class="button button-outline-light" href="tel:6137447336">
+          <a class="button button-outline-light" href="tel:6137447336" data-cta="final-phone">
             <span aria-hidden="true" data-icon="phone"></span>
             Call or Text 613-744-7336
           </a>
@@ -269,7 +298,7 @@
         <div>
           <h2>Christmas Lights Ottawa</h2>
           <p>Professional Christmas light installation and holiday decorating in Ottawa, focused on warm lower-level displays, wreaths, garlands, walkways, trees, storefronts, maintenance, takedown, and storage.</p>
-          <a class="button button-primary" href="/request-a-quote">Request a Free Quote</a>
+          <a class="button button-primary" href="/request-a-quote" data-cta="footer-request-quote">Request a Free Quote</a>
         </div>
         <div>
           <h3>Quick Links</h3>
@@ -281,11 +310,12 @@
         </div>
         <div>
           <h3>Services</h3>
-          <a href="/#services">Entryway &amp; porch decorating</a>
-          <a href="/#services">Wreaths, garlands &amp; bows</a>
-          <a href="/#services">Walkways &amp; landscape accents</a>
+          <a href="/#services">Christmas Light Installation Ottawa</a>
+          <a href="/blog/lower-level-christmas-lighting-ottawa">Lower-Level Christmas Lighting</a>
+          <a href="/blog/christmas-wreaths-garlands-entryway-decorating-ottawa">Wreaths &amp; Garlands</a>
           <a href="/#services">Commercial Christmas decorating Ottawa</a>
-          <a href="/blog/christmas-light-installation-cost-ottawa">Christmas light installation cost Ottawa</a>
+          <a href="/#services">Christmas Light Takedown &amp; Storage</a>
+          <a href="/request-a-quote" data-cta="footer-service-request-quote">Request a Free Quote</a>
         </div>
         <div>
           <h3>Service Areas</h3>
@@ -297,7 +327,7 @@
         </div>
         <div>
           <h3>Contact</h3>
-          <a href="tel:6137447336">Phone/Text: 613-744-7336</a>
+          <a href="tel:6137447336" data-cta="footer-phone">Call or Text: 613-744-7336</a>
           <p>Serving Ottawa, Kanata, Stittsville, Barrhaven, Orleans, Manotick, and surrounding communities.</p>
         </div>
       </div>

@@ -27,11 +27,11 @@ window.siteData = {
     "Installation, maintenance, takedown, and storage handled for you"
   ],
   trustItems: [
-    { icon: "calendar", title: "Over 10 years", text: "serving Ottawa" },
-    { icon: "shield", title: "Fully", text: "insured" },
+    { icon: "store", title: "Trusted by", text: "Ottawa clients" },
+    { icon: "home", title: "Serving Ottawa", text: "and nearby communities" },
     { icon: "sparkle", title: "Maintenance", text: "available" },
     { icon: "box", title: "Takedown and", text: "storage available" },
-    { icon: "store", title: "Trusted by homes", text: "and businesses" }
+    { icon: "wreath", title: "Custom designs", text: "for homes and businesses" }
   ],
   process: [
     {
@@ -64,21 +64,21 @@ window.siteData = {
     {
       icon: "home",
       title: "Entryway & Porch Decorating",
-      text: "Make your front door feel warm, finished, and festive.",
+      text: "Make the first view of your home feel warm, finished, and festive.",
       image: "assets/images/porch-entry-lighting.png",
-      alt: "Christmas porch with wreaths, garlands, bows, and warm lights"
+      alt: "Ottawa front porch decorated with Christmas wreaths, garlands, bows, and warm white lights"
     },
     {
       icon: "sparkle",
       title: "Lower-Level Trim Lighting",
       text: "Warm accents for porches, garages, entryways, and easy-to-reach trim.",
       image: "assets/images/hero-lower-level-lighting.png",
-      alt: "Lower-level trim lighting around a porch and garage"
+      alt: "Warm lower-level Christmas trim lighting around an Ottawa porch and garage"
     },
     {
       icon: "wreath",
       title: "Wreaths, Garlands & Bows",
-      text: "Classic greenery that adds polish before guests reach the door.",
+      text: "Classic greenery that adds polish before guests or customers reach the door.",
       image: "assets/images/porch-entry-lighting.png",
       alt: "Front porch wreaths and garland with warm Christmas lights"
     },
@@ -106,7 +106,7 @@ window.siteData = {
     {
       icon: "box",
       title: "Takedown & Storage",
-      text: "We remove, organize, and store your holiday display after the season.",
+      text: "We remove, organize, and prepare your display for storage after the season.",
       image: "assets/images/porch-entry-lighting.png",
       alt: "Neatly decorated lower-level holiday display ready for seasonal care"
     },
@@ -145,13 +145,15 @@ window.siteData = {
     }
   ],
   formServices: [
-    "Entryway, wreaths, garlands, and bows",
-    "Porch, railing, and column decorating",
-    "Lower-level trim and garage accents",
-    "Tree, shrub, and landscape lighting",
-    "Walkway and driveway accents",
-    "Commercial storefront decorating",
-    "Takedown and storage"
+    "Entryway & Porch Decorating",
+    "Lower-Level Trim Lighting",
+    "Wreaths, Garlands & Bows",
+    "Trees, Shrubs & Landscape Accents",
+    "Walkways & Driveway Accents",
+    "Commercial Storefront Decorating",
+    "Takedown & Storage",
+    "Complete Holiday Decor Package",
+    "Not Sure Yet"
   ],
   referralSources: [
     "Google Search",
@@ -161,24 +163,24 @@ window.siteData = {
     "Referral"
   ],
   proof: [
-    "Over 10 years serving Ottawa homes and businesses.",
-    "Fully insured installation with maintenance available throughout the season.",
-    "Takedown and storage available so the whole season stays easy."
+    "Trusted by Ottawa homeowners and businesses.",
+    "Custom lower-level designs for homes, storefronts, and seasonal entrances.",
+    "Maintenance, takedown, and storage available so the whole season stays easy."
   ],
   testimonials: [
     {
       quote: "We hired Christmas Lights Ottawa this year, and wow, what a difference. Our house looks amazing, just like something out of a holiday card. The crew was friendly and did a great job.",
-      name: "David Carter",
+      name: "Ottawa Homeowner",
       location: "Nepean, ON"
     },
     {
       quote: "They handled everything for us, from design to setup. It took the stress out of decorating and feels so nice coming home to a beautifully lit house.",
-      name: "Emily Thompson",
+      name: "Kanata Homeowner",
       location: "Ottawa, ON"
     },
     {
       quote: "They made our holiday season so much brighter. The team had great ideas, the installation was quick, and we loved showing off the lights to friends and family.",
-      name: "Samantha Lee",
+      name: "Local Business Owner",
       location: "Orleans, ON"
     }
   ],
