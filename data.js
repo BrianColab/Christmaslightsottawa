@@ -1,93 +1,132 @@
 window.siteData = {
   phone: "613-744-7336",
+  positioningPoints: [
+    "No ladders, tangles, or cold-weather setup",
+    "Warm, professional displays designed for your property",
+    "Installation, maintenance, takedown, and storage handled for you"
+  ],
   trustItems: [
-    { icon: "calendar", title: "Over 10 Years", text: "Lighting Ottawa" },
-    { icon: "users", title: "Thousands of Happy", text: "Homeowners" },
-    { icon: "shield", title: "Safe, Reliable &", text: "Professional" },
-    { icon: "sparkle", title: "Premium Quality Lights", text: "Built to Last" }
+    { icon: "calendar", title: "Over 10 years", text: "serving Ottawa" },
+    { icon: "shield", title: "Fully", text: "insured" },
+    { icon: "sparkle", title: "Maintenance", text: "included" },
+    { icon: "box", title: "Takedown and", text: "storage available" },
+    { icon: "store", title: "Trusted by homes", text: "and businesses" }
   ],
   process: [
     {
       icon: "home",
-      title: "Free Consultation",
-      text: "We visit your home, discuss your vision, and provide a custom design and quote."
+      title: "Send Your Address & Photos",
+      text: "Share the property and a few angles you want decorated."
     },
     {
       icon: "bulb",
-      title: "Custom Design",
-      text: "We create a tailored lighting design that brings your home to life."
+      title: "We Design the Look",
+      text: "We map a warm lower-level display around your entry, trim, greenery, and landscape."
     },
     {
-      icon: "ladder",
-      title: "Professional Installation",
-      text: "Our expert team installs your lights safely, neatly, and with care."
+      icon: "award",
+      title: "You Approve the Quote",
+      text: "You review the plan, products, and scope before anything is scheduled."
     },
     {
       icon: "wreath",
-      title: "Maintenance",
-      text: "We keep everything shining bright all season long."
+      title: "We Install & Maintain",
+      text: "Your display is installed neatly and kept shining through the season."
     },
     {
       icon: "box",
-      title: "Takedown & Storage",
-      text: "We take down, store, and protect your lights for next season."
+      title: "We Remove & Store",
+      text: "After the holidays, we take everything down and prepare it for next year."
     }
   ],
   services: [
     {
       icon: "home",
-      title: "Lower-Level Trim Lighting",
-      text: "Clean, warm lighting for porches, garages, entryways, and lower rooflines.",
-      image: "assets/images/hero-lower-level-lighting.png",
-      alt: "Lower-level porch and garage Christmas trim lighting"
+      title: "Entryway & Porch Decorating",
+      text: "Make your front door feel warm, finished, and festive.",
+      image: "assets/images/porch-entry-lighting.png",
+      alt: "Christmas porch with wreaths, garlands, bows, and warm lights"
     },
     {
-      icon: "tree",
-      title: "Tree Lighting",
-      text: "Transform your trees into stunning winter focal points.",
-      image: "assets/images/garage-walkway-lighting.png",
-      alt: "Lit shrubs and small evergreens along a winter walkway"
+      icon: "sparkle",
+      title: "Lower-Level Trim Lighting",
+      text: "Warm accents for porches, garages, entryways, and easy-to-reach trim.",
+      image: "assets/images/hero-lower-level-lighting.png",
+      alt: "Lower-level trim lighting around a porch and garage"
     },
     {
       icon: "wreath",
-      title: "Wreaths & Garland",
-      text: "Beautiful greenery and wreaths for a warm holiday welcome.",
+      title: "Wreaths, Garlands & Bows",
+      text: "Classic greenery that adds polish before guests reach the door.",
       image: "assets/images/porch-entry-lighting.png",
       alt: "Front porch wreaths and garland with warm Christmas lights"
     },
     {
-      icon: "sparkle",
-      title: "Walkways & Accents",
-      text: "Add charm and safety with elegant lighting accents.",
+      icon: "tree",
+      title: "Trees, Shrubs & Landscape Accents",
+      text: "Soft landscape glow for small trees, shrubs, and garden beds.",
+      image: "assets/images/garage-walkway-lighting.png",
+      alt: "Lit shrubs and small evergreens along a winter walkway"
+    },
+    {
+      icon: "bulb",
+      title: "Walkways & Driveway Accents",
+      text: "Guide guests in with elegant lighting along paths and approaches.",
       image: "assets/images/garage-walkway-lighting.png",
       alt: "Warm pathway lighting and snowy lower-level Christmas accents"
     },
     {
-      icon: "box",
-      title: "Takedown & Storage",
-      text: "We handle everything so you can relax.",
-      image: "assets/images/porch-entry-lighting.png",
-      alt: "Neatly decorated lower-level holiday display ready for seasonal care"
-    },
-    {
       icon: "store",
-      title: "Commercial Decorating",
-      text: "Make your business stand out this holiday season.",
+      title: "Commercial Storefront Decorating",
+      text: "Create a welcoming holiday storefront for customers and staff.",
       image: "assets/images/commercial-storefront-lighting.png",
       alt: "Commercial storefront decorated with Christmas garland and warm lights"
     },
     {
+      icon: "box",
+      title: "Takedown & Storage",
+      text: "We remove, organize, and store your holiday display after the season.",
+      image: "assets/images/porch-entry-lighting.png",
+      alt: "Neatly decorated lower-level holiday display ready for seasonal care"
+    },
+    {
       icon: "award",
       title: "Complete Holiday Decor Package",
-      text: "A polished package for lights, greenery, wreaths, accents, takedown, and storage.",
+      text: "A full lower-level plan with lights, greenery, care, removal, and storage.",
       image: "assets/images/hero-lower-level-lighting.png",
       alt: "Premium complete lower-level Christmas decor package on an Ottawa home"
     }
   ],
+  decorateItems: [
+    "Front doors",
+    "Porches",
+    "Railings",
+    "Columns",
+    "Garages",
+    "Shrubs",
+    "Walkways",
+    "Small trees",
+    "Storefronts",
+    "Wreaths and garlands"
+  ],
+  packages: [
+    {
+      title: "Starter Glow",
+      text: "Entryway, wreath, garland, and simple accent lighting."
+    },
+    {
+      title: "Classic Holiday",
+      text: "Entryway, lower trim, shrubs, walkway accents, and seasonal greenery."
+    },
+    {
+      title: "Complete Christmas",
+      text: "Full lower-level decorating plan with lighting, greenery, maintenance, takedown, and storage."
+    }
+  ],
   proof: [
-    "Designs built around porches, railings, entryways, shrubs, walkways, garages, and storefronts.",
-    "Professional-grade warm white lights, wreaths, garlands, bows, and greenery.",
-    "Season-long support, then careful takedown and storage when the holidays are done."
+    "Over 10 years serving Ottawa homes and businesses.",
+    "Fully insured installation with season-long maintenance included.",
+    "Takedown and storage available so the whole season stays easy."
   ],
   testimonials: [
     {

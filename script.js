@@ -32,6 +32,10 @@ document.getElementById("trust-strip").innerHTML = data.trustItems.map((item) =>
   </div>
 `).join("");
 
+document.getElementById("positioning-points").innerHTML = data.positioningPoints.map((item) => `
+  <p>${icon("shield")}<span>${item}</span></p>
+`).join("");
+
 document.getElementById("process-grid").innerHTML = data.process.map((step, index) => `
   <article class="process-step">
     <span class="step-number">${index + 1}</span>
@@ -47,6 +51,18 @@ document.getElementById("services-grid").innerHTML = data.services.map((service)
     <h3>${service.title}</h3>
     <p>${service.text}</p>
     <img src="${service.image}" alt="${service.alt}" loading="lazy">
+  </article>
+`).join("");
+
+document.getElementById("decorate-grid").innerHTML = data.decorateItems.map((item) => `
+  <p>${icon("sparkle")}<span>${item}</span></p>
+`).join("");
+
+document.getElementById("packages-grid").innerHTML = data.packages.map((item, index) => `
+  <article class="package-card">
+    <p class="package-kicker">Package ${index + 1}</p>
+    <h3>${item.title}</h3>
+    <p>${item.text}</p>
   </article>
 `).join("");
 
