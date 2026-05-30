@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Request a Free Quote | Christmas Lights Ottawa</title>
+    <meta
+      name="description"
+      content="Request a free Christmas light installation and holiday decorating quote in Ottawa. Send your address, photos, services, and project details."
+    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="/" aria-label="Christmas Lights Ottawa home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img">
+            <circle cx="32" cy="29" r="18" fill="none" stroke="currentColor" stroke-width="6" stroke-dasharray="4 5"></circle>
+            <path d="M24 45l-6 13 14-7 14 7-6-13" fill="#a80f0f"></path>
+          </svg>
+        </span>
+        <span class="brand-text">Christmas<br>Lights Ottawa</span>
+      </a>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-menu-toggle>
+        <span class="sr-only">Toggle menu</span>
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" data-nav>
+        <a href="/">Home</a>
+        <a href="/#services">Services</a>
+        <a href="/#process">Our Process</a>
+        <a href="/#gallery">Gallery</a>
+        <a href="/#faq">FAQ</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+
+      <a class="button button-primary header-cta" href="tel:6137447336">
+        <span aria-hidden="true" data-icon="phone"></span>
+        Call or Text 613-744-7336
+      </a>
+    </header>
+
+    <main>
+      <section class="section quote-section quote-page" aria-labelledby="quote-form-title">
+        <div class="quote-intro">
+          <p class="eyebrow">Request a free quote</p>
+          <h1 id="quote-form-title">Tell us what you would like decorated.</h1>
+          <p>
+            Send your address, a few photos, and the areas you want decorated. A Christmas Lights Ottawa consultant can review your property and recommend a warm, polished holiday decorating plan.
+          </p>
+          <div class="quote-contact-card">
+            <p><strong>Prefer to talk?</strong></p>
+            <a href="tel:6137447336">Call or Text 613-744-7336</a>
+          </div>
+        </div>
+
+        <!-- TODO: Wire this front-end form to a production form handler before launch. -->
+        <form class="quote-form" data-quote-form>
+          <div class="form-row">
+            <label>
+              Name*
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              Email*
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+          </div>
+
+          <div class="form-row">
+            <label>
+              Phone*
+              <input type="tel" name="phone" autocomplete="tel" required>
+            </label>
+            <label>
+              Preferred Contact Method
+              <select name="preferred-contact">
+                <option value="">Select one</option>
+                <option>Phone</option>
+                <option>Text</option>
+                <option>Email</option>
+              </select>
+            </label>
+          </div>
+
+          <label>
+            Address*
+            <input type="text" name="address" autocomplete="street-address" required>
+          </label>
+
+          <label>
+            Property Type
+            <select name="property-type">
+              <option value="">Select one</option>
+              <option>Home</option>
+              <option>Townhome</option>
+              <option>Condo / Apartment</option>
+              <option>Retail storefront</option>
+              <option>Office / Commercial property</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <fieldset>
+            <legend>Services interested in</legend>
+            <div class="checkbox-grid" id="form-services"></div>
+          </fieldset>
+
+          <label>
+            Upload Photos
+            <input type="file" name="photos" accept="image/*" multiple>
+          </label>
+
+          <label>
+            Message / Project Details
+            <textarea name="message" rows="6" placeholder="Tell us about your entryway, porch, railings, shrubs, walkways, storefront, or any areas you want decorated."></textarea>
+          </label>
+
+          <button class="button button-primary button-phone" type="submit">
+            <span aria-hidden="true" data-icon="calendar"></span>
+            Submit Quote Request
+          </button>
+
+          <p class="form-status" data-form-status hidden>
+            Thanks. This form is ready visually, but submission still needs to be connected to a production form handler.
+          </p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="footer-grid">
+        <div>
+          <h2>Christmas Lights Ottawa</h2>
+          <p>Professional Christmas light installation and holiday decorating in Ottawa, with maintenance, takedown, and storage available.</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <a href="/">Home</a>
+          <a href="/#services">Services</a>
+          <a href="/#gallery">Gallery</a>
+          <a href="/#faq">FAQ</a>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <a href="tel:6137447336">Phone/Text: 613-744-7336</a>
+          <p>Serving Ottawa and surrounding communities.</p>
+        </div>
+      </div>
+      <p class="copyright">&copy; <span id="year"></span> Christmas Lights Ottawa. All rights reserved.</p>
+    </footer>
+
+    <script src="../data.js"></script>
+    <script src="../script.js"></script>
+    <script src="../quote.js"></script>
+  </body>
+</html>

@@ -25,76 +25,89 @@ document.querySelectorAll("[data-icon]").forEach((el) => {
 
 const data = window.siteData;
 
-document.getElementById("trust-strip").innerHTML = data.trustItems.map((item) => `
+const setHTML = (id, html) => {
+  const el = document.getElementById(id);
+  if (el) el.innerHTML = html;
+};
+
+setHTML("trust-strip", data.trustItems.map((item) => `
   <div class="trust-item">
     ${icon(item.icon)}
     <p><strong>${item.title}</strong><span>${item.text}</span></p>
   </div>
-`).join("");
+`).join(""));
 
-document.getElementById("positioning-points").innerHTML = data.positioningPoints.map((item) => `
+setHTML("positioning-points", data.positioningPoints.map((item) => `
   <p>${icon("shield")}<span>${item}</span></p>
-`).join("");
+`).join(""));
 
-document.getElementById("process-grid").innerHTML = data.process.map((step, index) => `
+setHTML("process-grid", data.process.map((step, index) => `
   <article class="process-step">
     <span class="step-number">${index + 1}</span>
     ${icon(step.icon)}
     <h3>${step.title}</h3>
     <p>${step.text}</p>
   </article>
-`).join("");
+`).join(""));
 
-document.getElementById("services-grid").innerHTML = data.services.map((service) => `
+setHTML("services-grid", data.services.map((service) => `
   <article class="service-card">
     <div class="service-icon">${icon(service.icon)}</div>
     <h3>${service.title}</h3>
     <p>${service.text}</p>
     <img src="${service.image}" alt="${service.alt}" loading="lazy">
   </article>
-`).join("");
+`).join(""));
 
-document.getElementById("decorate-grid").innerHTML = data.decorateItems.map((item) => `
+setHTML("decorate-grid", data.decorateItems.map((item) => `
   <p>${icon("sparkle")}<span>${item}</span></p>
-`).join("");
+`).join(""));
 
-document.getElementById("packages-grid").innerHTML = data.packages.map((item, index) => `
+setHTML("packages-grid", data.packages.map((item, index) => `
   <article class="package-card">
     <p class="package-kicker">Package ${index + 1}</p>
     <h3>${item.title}</h3>
     <p>${item.text}</p>
   </article>
-`).join("");
+`).join(""));
 
-document.getElementById("form-services").innerHTML = data.formServices.map((item, index) => `
+setHTML("form-services", data.formServices.map((item) => `
   <label class="check-option">
     <input type="checkbox" name="services" value="${item}">
     <span>${item}</span>
   </label>
-`).join("");
+`).join(""));
 
-document.getElementById("referral-source").innerHTML = `
+setHTML("referral-source", `
   <option value="">Select one</option>
   ${data.referralSources.map((item) => `<option value="${item}">${item}</option>`).join("")}
-`;
+`);
 
-document.getElementById("proof-list").innerHTML = data.proof.map((item) => `
+setHTML("proof-list", data.proof.map((item) => `
   <p>${icon("shield")}<span>${item}</span></p>
-`).join("");
+`).join(""));
 
-document.getElementById("area-list").innerHTML = data.areas.map((area) => `<span>${area}</span>`).join("");
+setHTML("area-list", data.areas.map((area) => `<span>${area}</span>`).join(""));
 
-document.getElementById("gallery-grid").innerHTML = data.gallery.map((item) => `
+setHTML("gallery-grid", data.gallery.map((item) => `
   <figure>
     <img src="${item.image}" alt="${item.alt}" loading="lazy">
-    <figcaption>${item.title}</figcaption>
+    <figcaption><span>${item.category}</span>${item.title}</figcaption>
   </figure>
-`).join("");
+`).join(""));
+
+setHTML("faq-grid", data.faqs.map((item) => `
+  <details>
+    <summary>${item.question}</summary>
+    <p>${item.answer}</p>
+  </details>
+`).join(""));
 
 let testimonialIndex = 0;
 const testimonialCard = document.getElementById("testimonial-card");
 
 function renderTestimonial() {
+  if (!testimonialCard) return;
   const item = data.testimonials[testimonialIndex];
   testimonialCard.innerHTML = `
     <div class="stars" aria-label="Five star rating">★★★★★</div>
@@ -104,12 +117,12 @@ function renderTestimonial() {
   `;
 }
 
-document.querySelector("[data-testimonial-prev]").addEventListener("click", () => {
+document.querySelector("[data-testimonial-prev]")?.addEventListener("click", () => {
   testimonialIndex = (testimonialIndex - 1 + data.testimonials.length) % data.testimonials.length;
   renderTestimonial();
 });
 
-document.querySelector("[data-testimonial-next]").addEventListener("click", () => {
+document.querySelector("[data-testimonial-next]")?.addEventListener("click", () => {
   testimonialIndex = (testimonialIndex + 1) % data.testimonials.length;
   renderTestimonial();
 });
@@ -119,17 +132,18 @@ renderTestimonial();
 const toggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
 
-toggle.addEventListener("click", () => {
+toggle?.addEventListener("click", () => {
   const isOpen = toggle.getAttribute("aria-expanded") === "true";
   toggle.setAttribute("aria-expanded", String(!isOpen));
   nav.classList.toggle("is-open", !isOpen);
 });
 
-nav.addEventListener("click", (event) => {
+nav?.addEventListener("click", (event) => {
   if (event.target.tagName === "A") {
     toggle.setAttribute("aria-expanded", "false");
     nav.classList.remove("is-open");
   }
 });
 
-document.getElementById("year").textContent = new Date().getFullYear();
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();

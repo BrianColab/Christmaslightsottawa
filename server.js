@@ -52,6 +52,31 @@ const server = http.createServer((req, res) => {
   }
 
   fs.stat(filePath, (statError, stats) => {
+    if (!statError && stats.isDirectory()) {
+      const indexPath = path.join(filePath, "index.html");
+      fs.stat(indexPath, (indexError, indexStats) => {
+        if (indexError || !indexStats.isFile()) {
+          send(res, 404, "Not found");
+          return;
+        }
+
+        res.writeHead(200, {
+          "Content-Type": contentTypes[".html"],
+          "Content-Length": indexStats.size,
+          "Cache-Control": "no-cache",
+          "X-Content-Type-Options": "nosniff"
+        });
+
+        if (req.method === "HEAD") {
+          res.end();
+          return;
+        }
+
+        fs.createReadStream(indexPath).pipe(res);
+      });
+      return;
+    }
+
     if (statError || !stats.isFile()) {
       send(res, 404, "Not found");
       return;

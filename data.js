@@ -1,5 +1,25 @@
 window.siteData = {
+  businessName: "Christmas Lights Ottawa",
   phone: "613-744-7336",
+  phoneHref: "tel:6137447336",
+  email: "sales@christmaslightsottawa.com",
+  meta: {
+    title: "Christmas Light Installation Ottawa | Christmas Lights Ottawa",
+    description: "Professional Christmas light installation and holiday decorating in Ottawa. Lower-level lighting, wreaths, garlands, walkways, trees, commercial displays, maintenance, takedown, and storage."
+  },
+  navItems: [
+    { label: "Home", href: "/" },
+    { label: "Services", href: "/#services" },
+    { label: "Our Process", href: "/#process" },
+    { label: "Gallery", href: "/#gallery" },
+    { label: "FAQ", href: "/#faq" },
+    { label: "Contact", href: "/#contact" }
+  ],
+  cta: {
+    quoteLabel: "Request a Free Quote",
+    quoteHref: "/request-a-quote/",
+    phoneLabel: "Call or Text 613-744-7336"
+  },
   positioningPoints: [
     "No ladders, tangles, or cold-weather setup",
     "Warm, professional displays designed for your property",
@@ -146,52 +166,88 @@ window.siteData = {
   ],
   testimonials: [
     {
-      quote: "Christmas Lights Ottawa made our home look magical. The team was professional, on time, and the attention to detail was incredible. We couldn't be happier and will definitely be using them again next year.",
-      name: "The MacKenzie Family",
-      location: "Kanata, ON"
+      quote: "We hired Christmas Lights Ottawa this year, and wow, what a difference. Our house looks amazing, just like something out of a holiday card. The crew was friendly and did a great job.",
+      name: "David Carter",
+      location: "Nepean, ON"
     },
     {
-      quote: "The lower-level lighting made our porch, walkway, and front garden feel beautiful without needing a huge roofline display. Everything was tidy, warm, and exactly what we wanted.",
-      name: "The Deschamps Family",
+      quote: "They handled everything for us, from design to setup. It took the stress out of decorating and feels so nice coming home to a beautifully lit house.",
+      name: "Emily Thompson",
+      location: "Ottawa, ON"
+    },
+    {
+      quote: "They made our holiday season so much brighter. The team had great ideas, the installation was quick, and we loved showing off the lights to friends and family.",
+      name: "Samantha Lee",
       location: "Orleans, ON"
-    },
-    {
-      quote: "They handled the design, install, maintenance, and takedown. Our storefront looked festive all season, and we never had to think about ladders or storage.",
-      name: "Local Shop Owner",
-      location: "Westboro Village"
     }
   ],
-  areas: ["Kanata", "Stittsville", "Barrhaven", "Orleans", "Riverside South", "Glebe", "Westboro Village", "Manotick"],
+  areas: ["Ottawa", "Kanata", "Stittsville", "Barrhaven", "Orleans", "Riverside South", "Glebe", "Westboro Village", "Manotick", "Greely", "Cumberland Estates", "Nepean"],
   gallery: [
     {
       image: "assets/images/hero-lower-level-lighting.png",
       alt: "Ottawa home with lower-level porch, garage, shrub, and walkway Christmas lights",
-      title: "Lower-Level Home Glow"
+      title: "Entryways",
+      category: "Entryways"
     },
     {
       image: "assets/images/porch-entry-lighting.png",
       alt: "Christmas porch with wreath, garland, bows, and warm white lights",
-      title: "Porch & Entryway"
-    },
-    {
-      image: "assets/images/garage-walkway-lighting.png",
-      alt: "Garage trim, shrubs, and walkway lighting for a winter holiday home",
-      title: "Garage & Walkway"
-    },
-    {
-      image: "assets/images/commercial-storefront-lighting.png",
-      alt: "Commercial storefront decorated with wreaths, garland, and warm lights",
-      title: "Commercial Storefront"
+      title: "Porches",
+      category: "Porches"
     },
     {
       image: "assets/images/porch-entry-lighting.png",
       alt: "Lower-level Christmas garland and railing lights on a snowy porch",
-      title: "Railings & Garland"
+      title: "Wreaths & Garlands",
+      category: "Wreaths & garlands"
     },
     {
       image: "assets/images/garage-walkway-lighting.png",
-      alt: "Lit shrubs and pathway accents outside a Christmas home",
-      title: "Shrubs & Accents"
+      alt: "Lit shrubs and small evergreens along a winter walkway",
+      title: "Trees & Shrubs",
+      category: "Trees & shrubs"
+    },
+    {
+      image: "assets/images/garage-walkway-lighting.png",
+      alt: "Garage trim, shrubs, and walkway lighting for a winter holiday home",
+      title: "Walkways",
+      category: "Walkways"
+    },
+    {
+      image: "assets/images/commercial-storefront-lighting.png",
+      alt: "Commercial storefront decorated with Christmas garland and warm lights",
+      title: "Commercial Storefronts",
+      category: "Commercial storefronts"
+    }
+  ],
+  faqs: [
+    {
+      question: "Do you provide the lights and decorations?",
+      answer: "Yes. Christmas Lights Ottawa supplies professional-grade lights, wreaths, garlands, bows, timers, hooks, hangers, and the details needed for a finished display."
+    },
+    {
+      question: "Do you install and take everything down?",
+      answer: "Yes. We design, install, maintain, remove, and prepare your holiday display after the season so you do not have to manage the yearly setup."
+    },
+    {
+      question: "Do you store the decorations?",
+      answer: "Storage is available. We can catalog and store your display separately so it is ready for future seasons and easier to adjust year after year."
+    },
+    {
+      question: "Do you offer maintenance during the season?",
+      answer: "Yes. Maintenance is included for the displays we install, so your lights and decorations stay looking their best throughout the holidays."
+    },
+    {
+      question: "What areas do you serve?",
+      answer: "We serve Ottawa and the Greater Ottawa Area, including communities such as Kanata, Stittsville, Barrhaven, Orleans, Manotick, Greely, and Cumberland Estates."
+    },
+    {
+      question: "How much does it cost?",
+      answer: "Every project is custom. Pricing depends on property size, design, products, and installation requirements. Request a quote and we will help recommend the right package."
+    },
+    {
+      question: "Do you decorate businesses?",
+      answer: "Yes. We decorate commercial storefronts, offices, restaurants, bars, BIAs, municipal spaces, museums, and other business properties across Ottawa."
     }
   ]
 };
