@@ -1,0 +1,13 @@
+{
+  "name": "christmas-lights-ottawa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static marketing homepage for Christmas Lights Ottawa.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
