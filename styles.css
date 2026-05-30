@@ -370,6 +370,28 @@ h2,
   transform: rotate(7deg);
 }
 
+.hero::before,
+.hero::after {
+  background: url("assets/images/Cornerlefttop-clean.png") center/contain no-repeat;
+  filter: drop-shadow(0 14px 20px rgba(31, 27, 22, 0.18));
+}
+
+.hero::before {
+  left: -34px;
+  top: 46px;
+  width: 250px;
+  height: 250px;
+  transform: rotate(-2deg);
+}
+
+.hero::after {
+  right: -34px;
+  top: 46px;
+  width: 250px;
+  height: 250px;
+  transform: scaleX(-1) rotate(-2deg);
+}
+
 .hero-corner-wreaths {
   position: absolute;
   left: 54px;
@@ -1742,14 +1764,14 @@ fieldset {
   }
 
   .hero::before {
-    transform: scale(0.78) rotate(-8deg);
+    transform: scale(0.78) rotate(-2deg);
     transform-origin: top left;
   }
 
   .hero::after {
     right: -46px;
-    top: 66px;
-    transform: scale(0.76) rotate(7deg);
+    top: 54px;
+    transform: scaleX(-1) scale(0.78) rotate(-2deg);
     transform-origin: top right;
   }
 
@@ -1831,13 +1853,13 @@ fieldset {
   .hero::before {
     left: -28px;
     top: 58px;
-    transform: scale(0.58) rotate(-8deg);
+    transform: scale(0.58) rotate(-2deg);
   }
 
   .hero::after {
     right: -68px;
     top: 72px;
-    transform: scale(0.54) rotate(7deg);
+    transform: scaleX(-1) scale(0.58) rotate(-2deg);
   }
 
   .hero-title-divider {
