@@ -316,132 +316,34 @@ h2,
 .hero::before {
   content: "";
   position: absolute;
-  left: -18px;
-  top: 58px;
-  z-index: 4;
-  width: 190px;
-  height: 118px;
-  pointer-events: none;
-  background:
-    radial-gradient(ellipse at 22% 20%, rgba(18, 61, 42, 0.95) 0 6px, transparent 7px),
-    radial-gradient(ellipse at 34% 28%, rgba(36, 90, 63, 0.95) 0 6px, transparent 7px),
-    radial-gradient(ellipse at 48% 34%, rgba(18, 61, 42, 0.88) 0 6px, transparent 7px),
-    radial-gradient(ellipse at 63% 40%, rgba(36, 90, 63, 0.9) 0 6px, transparent 7px),
-    radial-gradient(ellipse at 78% 48%, rgba(18, 61, 42, 0.82) 0 6px, transparent 7px),
-    linear-gradient(145deg, transparent 0 18%, rgba(18, 61, 42, 0.92) 19% 24%, transparent 25%),
-    linear-gradient(152deg, transparent 0 30%, rgba(36, 90, 63, 0.9) 31% 36%, transparent 37%),
-    radial-gradient(circle at 45% 66%, var(--deep-red) 0 16px, transparent 17px),
-    linear-gradient(135deg, transparent 0 40%, var(--deep-red) 41% 58%, transparent 59%),
-    linear-gradient(45deg, transparent 0 40%, #c51c1c 41% 58%, transparent 59%);
-  filter: drop-shadow(0 12px 18px rgba(31, 27, 22, 0.16));
-  transform: rotate(-8deg);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -28px;
-  top: 54px;
-  z-index: 4;
-  width: 260px;
-  height: 164px;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 18% 66%, #fff0a8 0 4px, rgba(255, 220, 90, 0.88) 5px 7px, transparent 8px),
-    radial-gradient(circle at 58% 23%, #fff0a8 0 4px, rgba(255, 220, 90, 0.9) 5px 7px, transparent 8px),
-    radial-gradient(circle at 78% 50%, #fff0a8 0 3px, rgba(255, 220, 90, 0.82) 4px 6px, transparent 7px),
-    radial-gradient(ellipse at 72% 34%, rgba(18, 61, 42, 0.98) 0 8px, transparent 9px),
-    radial-gradient(ellipse at 58% 28%, rgba(36, 90, 63, 0.96) 0 8px, transparent 9px),
-    radial-gradient(ellipse at 44% 34%, rgba(18, 61, 42, 0.94) 0 8px, transparent 9px),
-    radial-gradient(ellipse at 32% 42%, rgba(36, 90, 63, 0.92) 0 8px, transparent 9px),
-    radial-gradient(ellipse at 22% 52%, rgba(18, 61, 42, 0.9) 0 8px, transparent 9px),
-    radial-gradient(ellipse at 46% 70%, rgba(18, 61, 42, 0.94) 0 8px, transparent 9px),
-    linear-gradient(162deg, transparent 0 22%, rgba(18, 61, 42, 0.95) 23% 28%, transparent 29%),
-    linear-gradient(170deg, transparent 0 34%, rgba(36, 90, 63, 0.92) 35% 40%, transparent 41%),
-    linear-gradient(188deg, transparent 0 46%, rgba(18, 61, 42, 0.9) 47% 52%, transparent 53%),
-    linear-gradient(96deg, transparent 0 39%, rgba(18, 61, 42, 0.92) 40% 46%, transparent 47%),
-    radial-gradient(circle at 47% 54%, #c91f1f 0 18px, #8f0b0b 19px 21px, transparent 22px),
-    linear-gradient(134deg, transparent 0 39%, #c91f1f 40% 57%, transparent 58%),
-    linear-gradient(45deg, transparent 0 40%, var(--deep-red) 41% 58%, transparent 59%),
-    linear-gradient(82deg, transparent 0 43%, #b90f0f 44% 56%, transparent 57%);
-  filter:
-    drop-shadow(0 0 8px rgba(255, 222, 96, 0.72))
-    drop-shadow(0 14px 18px rgba(31, 27, 22, 0.18));
-  transform: rotate(7deg);
-}
-
-.hero::before,
-.hero::after {
-  background: url("assets/images/Cornerlefttop-clean.png") center/contain no-repeat;
-  filter: drop-shadow(0 14px 20px rgba(31, 27, 22, 0.18));
-}
-
-.hero::before {
-  left: -34px;
-  top: 46px;
+  left: -66px;
+  top: -16px;
+  z-index: 1;
   width: 250px;
   height: 250px;
+  pointer-events: none;
+  background: url("assets/images/Cornerlefttop-clean.png") center/contain no-repeat;
+  filter: drop-shadow(0 14px 20px rgba(31, 27, 22, 0.18));
   transform: rotate(-2deg);
 }
 
 .hero::after {
-  right: -34px;
-  top: 46px;
-  width: 250px;
-  height: 250px;
-  transform: scaleX(-1) rotate(-2deg);
-}
-
-.hero-corner-wreaths {
-  position: absolute;
-  left: 54px;
-  top: 14px;
-  z-index: 5;
-  width: 96px;
-  height: 70px;
-  pointer-events: none;
-}
-
-.hero-corner-wreaths span {
-  position: absolute;
-  width: 58px;
-  height: 58px;
-  border: 7px dotted var(--evergreen);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 50% 50%, transparent 0 52%, rgba(18, 61, 42, 0.12) 53% 60%, transparent 61%),
-    rgba(255, 248, 231, 0.28);
-  box-shadow: 0 10px 24px rgba(31, 27, 22, 0.12);
-}
-
-.hero-corner-wreaths span::after {
   content: "";
   position: absolute;
-  left: 50%;
-  bottom: -13px;
-  width: 24px;
-  height: 20px;
-  transform: translateX(-50%);
-  background:
-    linear-gradient(135deg, transparent 0 38%, var(--deep-red) 39% 68%, transparent 69%),
-    linear-gradient(225deg, transparent 0 38%, var(--deep-red) 39% 68%, transparent 69%);
-}
-
-.hero-corner-wreaths span:first-child {
-  left: 0;
-  top: 0;
-}
-
-.hero-corner-wreaths span:last-child {
-  left: 42px;
-  top: 10px;
-  transform: scale(0.74);
-  opacity: 0.88;
+  right: -66px;
+  top: -16px;
+  z-index: 1;
+  width: 250px;
+  height: 250px;
+  pointer-events: none;
+  background: url("assets/images/Cornerlefttop-clean.png") center/contain no-repeat;
+  filter: drop-shadow(0 14px 20px rgba(31, 27, 22, 0.18));
+  transform: scaleX(-1) rotate(-2deg);
 }
 
 .hero-copy {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   min-width: 0;
   width: 100%;
   max-width: 100vw;
@@ -1756,22 +1658,17 @@ fieldset {
     display: none;
   }
 
-  .hero-corner-wreaths {
-    left: 14px;
-    top: 12px;
-    transform: scale(0.78);
-    transform-origin: top left;
-  }
-
   .hero::before {
-    transform: scale(0.78) rotate(-2deg);
+    left: -70px;
+    top: -18px;
+    transform: scale(0.72) rotate(-2deg);
     transform-origin: top left;
   }
 
   .hero::after {
-    right: -46px;
-    top: 54px;
-    transform: scaleX(-1) scale(0.78) rotate(-2deg);
+    right: -70px;
+    top: -18px;
+    transform: scaleX(-1) scale(0.72) rotate(-2deg);
     transform-origin: top right;
   }
 
@@ -1846,20 +1743,16 @@ fieldset {
     min-height: 390px;
   }
 
-  .hero-corner-wreaths {
-    transform: scale(0.64);
-  }
-
   .hero::before {
-    left: -28px;
-    top: 58px;
-    transform: scale(0.58) rotate(-2deg);
+    left: -78px;
+    top: -14px;
+    transform: scale(0.5) rotate(-2deg);
   }
 
   .hero::after {
-    right: -68px;
-    top: 72px;
-    transform: scaleX(-1) scale(0.58) rotate(-2deg);
+    right: -78px;
+    top: -14px;
+    transform: scaleX(-1) scale(0.5) rotate(-2deg);
   }
 
   .hero-title-divider {
