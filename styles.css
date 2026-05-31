@@ -316,11 +316,11 @@ h2,
 .hero::before {
   content: "";
   position: absolute;
-  left: -66px;
-  top: -16px;
+  left: -22px;
+  top: 0;
   z-index: 1;
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 194px;
   pointer-events: none;
   background: url("assets/images/Cornerlefttop-clean.png") center/contain no-repeat;
   filter: drop-shadow(0 14px 20px rgba(31, 27, 22, 0.18));
@@ -330,11 +330,11 @@ h2,
 .hero::after {
   content: "";
   position: absolute;
-  right: -66px;
-  top: -16px;
+  right: -22px;
+  top: 0;
   z-index: 1;
-  width: 250px;
-  height: 250px;
+  width: 230px;
+  height: 194px;
   pointer-events: none;
   background: url("assets/images/Cornerlefttop-clean.png") center/contain no-repeat;
   filter: drop-shadow(0 14px 20px rgba(31, 27, 22, 0.18));
@@ -1659,16 +1659,16 @@ fieldset {
   }
 
   .hero::before {
-    left: -70px;
-    top: -18px;
-    transform: scale(0.72) rotate(-2deg);
+    left: -26px;
+    top: 0;
+    transform: scale(0.78) rotate(-2deg);
     transform-origin: top left;
   }
 
   .hero::after {
-    right: -70px;
-    top: -18px;
-    transform: scaleX(-1) scale(0.72) rotate(-2deg);
+    right: -26px;
+    top: 0;
+    transform: scaleX(-1) scale(0.78) rotate(-2deg);
     transform-origin: top right;
   }
 
@@ -1744,15 +1744,15 @@ fieldset {
   }
 
   .hero::before {
-    left: -78px;
-    top: -14px;
-    transform: scale(0.5) rotate(-2deg);
+    left: -42px;
+    top: 0;
+    transform: scale(0.56) rotate(-2deg);
   }
 
   .hero::after {
-    right: -78px;
-    top: -14px;
-    transform: scaleX(-1) scale(0.5) rotate(-2deg);
+    right: -42px;
+    top: 0;
+    transform: scaleX(-1) scale(0.56) rotate(-2deg);
   }
 
   .hero-title-divider {
