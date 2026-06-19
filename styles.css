@@ -313,33 +313,6 @@ h2,
   border-bottom: 1px solid var(--line);
 }
 
-.hero::before {
-  content: "";
-  position: absolute;
-  left: -22px;
-  top: 0;
-  z-index: 1;
-  width: 230px;
-  height: 194px;
-  pointer-events: none;
-  background: url("assets/images/Cornerlefttop-clean.png") center/contain no-repeat;
-  filter: drop-shadow(0 14px 20px rgba(31, 27, 22, 0.18));
-  transform: rotate(-2deg);
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  right: -22px;
-  top: 0;
-  z-index: 1;
-  width: 230px;
-  height: 194px;
-  pointer-events: none;
-  background: url("assets/images/Cornerlefttop-clean.png") center/contain no-repeat;
-  filter: drop-shadow(0 14px 20px rgba(31, 27, 22, 0.18));
-  transform: scaleX(-1) rotate(-2deg);
-}
 
 .hero-copy {
   position: relative;
